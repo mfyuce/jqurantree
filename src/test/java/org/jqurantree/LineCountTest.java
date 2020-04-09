@@ -18,17 +18,90 @@
 
 package org.jqurantree;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.*;
 
+import org.apache.lucene.analysis.ar.ArabicStemmer;
+import org.apache.maven.shared.utils.StringUtils;
+import org.apache.maven.shared.utils.io.FileUtils;
+//import org.jqurantree.analysis.stemmer.ArabicStemmer;
+//import org.jqurantree.analysis.stemmer.ISRI;
+import org.jqurantree.arabic.ArabicCharacter;
 import org.jqurantree.core.error.JQuranTreeException;
+import org.jqurantree.orthography.Document;
+import org.jqurantree.orthography.Token;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import static org.jqurantree.tools.Tools.*;
+
 public class LineCountTest {
 
+	public static final int MAX_COL = 18;
+
+	@Test
+	@Ignore
+	public void extractRootsAndWords() throws IOException {
+		csvWriter("roots.csv",getAllDistinctWordsAndRoots(), false);
+	}
+	@Test
+//	@Ignore
+	public void extractRootsAndLetters() throws IOException {
+		Set<String> letters = getAllDistinctLetters();
+		Map<Character, Integer> lettersAndNumbers = new LinkedHashMap<>();
+		int currentNumber=1;
+		for (String l:letters) {
+			if(StringUtils.isNotBlank(l)) {
+				lettersAndNumbers.put(l.charAt(0), currentNumber++);
+			}
+		}
+		Map<String, String> wordsAndRoots= getAllDistinctWordsAndRoots();
+		List<String[]> ret = new ArrayList<>();
+		String[] n = new String[MAX_COL];
+		for (int i=0;i<MAX_COL-3;i++){
+			n[i] = "l" + i;
+		}
+		n[MAX_COL-3] = "r1";
+		n[MAX_COL-2] = "r2";
+		n[MAX_COL-1] = "r3";
+		ret.add(n);
+		for (Map.Entry<String, String> v: wordsAndRoots.entrySet()) {
+			n = new String[MAX_COL];
+			String key = v.getKey();
+			String value = v.getValue();
+			if(value.length()>2) {
+				for (int iW = 0; iW < MAX_COL - 3 ; iW++) {
+					if(iW < key.length()) {
+						n[iW] = String.valueOf(lettersAndNumbers.get(key.charAt(iW)));
+					}else{
+						n[iW] = "0";
+					}
+				}
+				n[MAX_COL - 3] = "h"+ String.valueOf(lettersAndNumbers.get(value.charAt(0)));
+				n[MAX_COL - 2] = "h"+String.valueOf(lettersAndNumbers.get(value.charAt(1)));
+				n[MAX_COL - 1] = "h"+String.valueOf(lettersAndNumbers.get(value.charAt(2)));
+				ret.add(n);
+			}
+		}
+		csvWriter("roots_and_letters.csv",ret);
+	}
+	@Test
+	@Ignore
+	public void extractWords() throws IOException {
+		Map<String, String> wordsAndRoots= new LinkedHashMap<String, String>();
+		for (Token v: Document.getTokens()) {
+			String key = v.removeDiacritics().removeNonLetters().toUnicode();
+			if(!wordsAndRoots.containsKey(key)) {
+				wordsAndRoots.put(key, key);
+			}
+		}
+		csvWriter("words.csv",wordsAndRoots, true);
+	}
+	@Test
+//	@Ignore
+	public void extractLetters() throws IOException {
+		csvWriter("letters.csv",getAllDistinctLetters());
+	}
 	@Test
 	@Ignore
 	public void testLineCount() {

@@ -93,6 +93,7 @@ public abstract class ArabicEncoderBase implements ArabicEncoder {
 
 		// Initiate.
 		this.options = options;
+		int length = buffer.length;
 
 		// Encode each Arabic character.
 		for (int i = 0; i < characterCount; i++) {
@@ -103,7 +104,9 @@ public abstract class ArabicEncoderBase implements ArabicEncoder {
 			}
 
 			// Encode character.
-			encodeCharacter(buffer, offset);
+			if(offset< length) {
+				encodeCharacter(buffer, offset);
+			}
 			offset += ByteFormat.CHARACTER_WIDTH;
 		}
 

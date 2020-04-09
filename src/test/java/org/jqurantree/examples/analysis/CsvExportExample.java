@@ -46,6 +46,6 @@ public class CsvExportExample {
 		System.out.println(table);
 
 		// Export results to a CSV file.
-		table.writeFile("c:\\temp\\chapters.csv", ',');
+		table.writeFile("chapters.csv", ',');
 	}
 }
