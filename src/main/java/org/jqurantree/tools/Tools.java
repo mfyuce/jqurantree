@@ -4,18 +4,19 @@ import org.apache.commons.cli.*;
 import org.apache.commons.lang.StringUtils;
 import org.apache.lucene.analysis.ar.ArabicStemmer;
 import org.apache.maven.shared.utils.io.FileUtils;
+import org.jqurantree.analysis.AnalysisTable;
 import org.jqurantree.analysis.stemmer.ISRI;
 import org.jqurantree.arabic.ArabicCharacter;
 import org.jqurantree.arabic.ArabicText;
+import org.jqurantree.arabic.encoding.EncodingType;
 import org.jqurantree.orthography.Document;
 import org.jqurantree.orthography.Token;
+import org.jqurantree.search.SearchOptions;
+import org.jqurantree.search.TokenSearch;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Tools {
     public static void main(String[] args) throws IOException {
@@ -23,14 +24,22 @@ public class Tools {
         Options options = new Options();
 
         Option inputFile = new Option("in", "input-file", true, "input file path");
-        inputFile.setRequired(true);
+        inputFile.setRequired(false);
         options.addOption(inputFile);
+
+        Option inputFormat = new Option("if", "input-format", true, "input text format 1=Buckwater 2-Arabic [Default =1] ");
+        inputFile.setRequired(false);
+        options.addOption(inputFormat);
 
         Option outputFile = new Option("out", "output-file", true, "output file");
         outputFile.setRequired(false);
         options.addOption(outputFile);
 
-        Option output = new Option("o", "operation", true, "operation 1=Buckwater to Arabic 2-Arabic to Buckwater [Default=1]");
+        Option outputFormat = new Option("of", "output-format", true, "output text format 1=Buckwater 2-Arabic [Default =1] ");
+        inputFile.setRequired(false);
+        options.addOption(outputFormat);
+
+        Option output = new Option("o", "operation", true, "operation 1=Diacritics Free Seach 2-Exact Token Search [Default=1]");
         output.setRequired(false);
         options.addOption(output);
 
@@ -49,44 +58,92 @@ public class Tools {
 
         String inputFilePath = cmd.getOptionValue("in");
         String outputFilePath = cmd.getOptionValue("out");
+        String inputFormatText = cmd.getOptionValue("if");
+        String outputFormatText = cmd.getOptionValue("of");
         String operation = cmd.getOptionValue("operation");
         int operationNum = 1;
+        int inputFormatNum = 1;
+        int outputFormatNum = 1;
         if(StringUtils.isNotBlank(operation)){
             operationNum = Integer.parseInt(operation);
         }
-        String inputText = null;
+        if(StringUtils.isNotBlank(inputFormatText)){
+            inputFormatNum = Integer.parseInt(inputFormatText);
+        }
+        if(StringUtils.isNotBlank(outputFormatText)){
+            outputFormatNum = Integer.parseInt(outputFormatText);
+        }
+        String inputTextIn = null;
         String[] remaininArgs = cmd.getArgs();
         if(remaininArgs!=null && remaininArgs.length>0){
-            inputText = remaininArgs[0];
+            inputTextIn = remaininArgs[0];
         }else{
             if(StringUtils.isNotBlank(inputFilePath)){
-                inputText = readFile(inputFilePath);
+                inputTextIn = readFile(inputFilePath);
 //                inputText = StringUtils.replace(inputText, "\r\n", System.lineSeparator());
 //                inputText = StringUtils.replace(inputText, "\r", System.lineSeparator());
 //                inputText = StringUtils.replace(inputText, "\n", System.lineSeparator());
             }
         }
-        String outPut = null;
-        if(StringUtils.isNotBlank(inputText)){
-                switch (operationNum){
-                    case 1:
-                        outPut = ArabicText.fromBuckwalter(inputText).toUnicode();
-                        break;
-                    case 2:
-                        outPut = ArabicText.fromUnicode(inputText).toBuckwalter();
-                        break;
-                    default:
-                        break;
-                }
+        ArabicText inputText = null;
+        switch (inputFormatNum){
+            case 1: //Buckwater
+            default:
+                inputText = ArabicText.fromBuckwalter(inputTextIn);
+                break;
+            case 2: //Arabic
+                inputText = ArabicText.fromUnicode(inputTextIn);
+                break;
         }
-        if(StringUtils.isNotBlank(outputFilePath)){
-            writeFile(outputFilePath, outPut);
-        }else {
-            System.out.println(outPut);
+        String outPutText = null;
+        boolean general_out = true;
+        switch (operationNum){
+            case 1:
+            default:
+                handleSearch(outputFilePath, inputText, SearchOptions.RemoveDiacritics);
+                general_out = false;
+                break;
+            case 2:
+                handleSearch(outputFilePath, inputText, null);
+                general_out = false;
+                break;
+        }
+
+        if(general_out) {
+            switch (outputFormatNum) {
+                case 1: //Buckwater
+                default:
+                    outPutText = inputText.toBuckwalter();
+                    break;
+                case 2: //Arabic
+                    outPutText = inputText.toUnicode();
+                    break;
+            }
+            if (StringUtils.isNotBlank(outputFilePath)) {
+                writeFile(outputFilePath, outPutText);
+            } else {
+                System.out.println(outPutText);
+            }
         }
 //        System.out.println(inputText);
 //        System.out.println(outPut);
     }
+
+    private static void handleSearch(String outputFilePath, ArabicText inputText, SearchOptions options) {
+        AnalysisTable table = null;
+        if(options != null && options.equals(SearchOptions.RemoveDiacritics)) {
+            table = listAllReferences(StringUtils.split(inputText.removeDiacritics().toBuckwalter(), "\r\n\t, "));
+        }else{
+            table = listAllReferences(StringUtils.split(inputText.toBuckwalter(), "\r\n\t, "));
+        }
+        if(StringUtils.isNotBlank(outputFilePath)){
+            table.writeFile(outputFilePath);
+        }else{
+            System.out.println(table);
+        }
+        System.out.println("Matches: " + table.getRowCount());
+    }
+
     /**
      * @throws IOException
      */
@@ -187,5 +244,15 @@ public class Tools {
         }
 
         return wordsAndRoots;
+    }
+    public static AnalysisTable listAllReferences(String[] lst){
+        TokenSearch search = new TokenSearch(EncodingType.Buckwalter,
+                SearchOptions.RemoveDiacritics);
+
+        for (String item:lst) {
+            search.findSubstring(item);
+        }
+
+        return search.getResults();
     }
 }
