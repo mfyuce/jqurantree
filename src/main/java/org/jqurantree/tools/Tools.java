@@ -158,9 +158,9 @@ public class Tools {
                                      EncodingType outputEncodingType) {
         AnalysisTable table = null;
         if(options != null && options.equals(SearchOptions.RemoveDiacritics)) {
-            table = listAllReferences(StringUtils.split(inputText.removeDiacritics().toBuckwalter(), "\r\n\t, "),searchRoot,outputEncodingType);
+            table = listAllReferences(StringUtils.split(inputText.removeDiacritics().toString(outputEncodingType), "\r\n\t, "),searchRoot,outputEncodingType);
         }else{
-            table = listAllReferences(StringUtils.split(inputText.toBuckwalter(), "\r\n\t, "),searchRoot,outputEncodingType);
+            table = listAllReferences(StringUtils.split(inputText.toString(outputEncodingType), "\r\n\t, "),searchRoot,outputEncodingType);
         }
         if(StringUtils.isNotBlank(outputFilePath)){
             table.writeFile(outputFilePath);

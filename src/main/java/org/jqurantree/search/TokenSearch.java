@@ -60,7 +60,6 @@ public class TokenSearch {
 	private final List<SearchItem> items = new ArrayList<SearchItem>();
 	private final EncodingType encodingType;
 	private final SearchOptions options;
-	AlkhalilStemmer stemmer = new AlkhalilStemmer();
 	/**
 	 * Creates a new <code>TokenSearch</code> instance, using the specified
 	 * encoding scheme.
@@ -181,7 +180,7 @@ public class TokenSearch {
 					.toString(encodingType) : null;
 			String root = null;
 			try {
-				  root = ArabicText.fromUnicode(StemmingManager.stem(StemmerType.AlKhalil1_1, token.removeDiacritics().removeNonLetters().toUnicode())).toBuckwalter();
+				  root = ArabicText.fromUnicode(StemmingManager.stem(StemmerType.AlKhalil1_1, token.removeDiacritics().removeNonLetters().toUnicode())).toString(encodingType);
 			} catch (Exception e) {
 				root = cleanText;
 			}
