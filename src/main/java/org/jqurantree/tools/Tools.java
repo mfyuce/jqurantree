@@ -42,7 +42,7 @@ public class Tools {
         inputFile.setRequired(false);
         options.addOption(outputFormat);
 
-        Option output = new Option("o", "operation", true, "operation 1=Diacritics Free Seach 2-Exact Token Search 3-Root Search [Default=1]");
+        Option output = new Option("o", "operation", true, "operation 1=Diacritics Free Search 2-Exact Token Search 3-Root Search [Default=1]");
         output.setRequired(false);
         options.addOption(output);
 

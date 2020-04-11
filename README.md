@@ -16,11 +16,16 @@ The library contains;
 ```!bash
 java -cp jqurantree-1.0.0.jar  org.jqurantree.tools.Tools qamar
 
-Usage
 usage: jqurantree [input-text]
- -in,--input-file <arg>     input file path
- -o,--operation <arg>       operation 1=Buckwalter to Arabic 2-Arabic to Buckwalter [Default=1]
- -out,--output-file <arg>   output file
+ -if,--input-format <arg>    input text format 1=Buckwalter 2-Arabic
+                             [Default =1]
+ -in,--input-file <arg>      input file path
+ -o,--operation <arg>        operation 1=Diacritics Free Search 2-Exact
+                             Token Search 3-Root Search [Default=1]
+ -of,--output-format <arg>   output text format 1=Buckwalter 2-Arabic
+                             [Default =1]
+ -out,--output-file <arg>    output file
+
 
 
 Sample;
