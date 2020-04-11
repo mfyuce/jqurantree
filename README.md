@@ -19,7 +19,7 @@ java -cp jqurantree-1.0.0.jar  org.jqurantree.tools.Tools qamar
 Usage
 usage: jqurantree [input-text]
  -in,--input-file <arg>     input file path
- -o,--operation <arg>       operation 1=Buckwater to Arabic 2-Arabic to Buckwater [Default=1]
+ -o,--operation <arg>       operation 1=Buckwalter to Arabic 2-Arabic to Buckwalter [Default=1]
  -out,--output-file <arg>   output file
 
 
@@ -28,19 +28,3 @@ Sample;
 java -cp jqurantree-1.0.0.jar  org.jqurantree.tools.Tools -o 2 -in <path>\roots.csv -out <path>\roots_bw.csv
 ```
 
-
-# AlKhalil1.1
-mvn install:install-file \
-   -Dfile=AlKhalil.jar \
-   -DgroupId=AlKhalil \
-   -DartifactId=AlKhalil1.1 \
-   -Dversion=1.1 \
-   -Dpackaging=jar \
-   -DgeneratePom=true
-
-
-		<dependency>
-			<groupId>AlKhalil</groupId>
-			<artifactId>AlKhalil1.1</artifactId>
-			<version>1.1</version>
-		</dependency>

@@ -30,7 +30,7 @@ public class Tools {
         inputFile.setRequired(false);
         options.addOption(inputFile);
 
-        Option inputFormat = new Option("if", "input-format", true, "input text format 1=Buckwater 2-Arabic [Default =1] ");
+        Option inputFormat = new Option("if", "input-format", true, "input text format 1=Buckwalter 2-Arabic [Default =1] ");
         inputFile.setRequired(false);
         options.addOption(inputFormat);
 
@@ -38,7 +38,7 @@ public class Tools {
         outputFile.setRequired(false);
         options.addOption(outputFile);
 
-        Option outputFormat = new Option("of", "output-format", true, "output text format 1=Buckwater 2-Arabic [Default =1] ");
+        Option outputFormat = new Option("of", "output-format", true, "output text format 1=Buckwalter 2-Arabic [Default =1] ");
         inputFile.setRequired(false);
         options.addOption(outputFormat);
 
@@ -95,7 +95,7 @@ public class Tools {
         }
         ArabicText inputText = null;
         switch (inputFormatNum){
-            case 1: //Buckwater
+            case 1: //Buckwalter
             default:
                 inputText = ArabicText.fromBuckwalter(inputTextIn);
                 break;
@@ -103,27 +103,37 @@ public class Tools {
                 inputText = ArabicText.fromUnicode(inputTextIn);
                 break;
         }
+        EncodingType outputEncodingType = EncodingType.Buckwalter;
+        switch (outputFormatNum) {
+            case 1: //Buckwalter
+            default:
+                outputEncodingType = EncodingType.Buckwalter;
+                break;
+            case 2: //Arabic
+                outputEncodingType = EncodingType.Unicode;
+                break;
+        }
         String outPutText = null;
         boolean general_out = true;
         switch (operationNum){
             case 1:
             default:
-                handleSearch(outputFilePath, inputText, SearchOptions.RemoveDiacritics,false);
+                handleSearch(outputFilePath, inputText, SearchOptions.RemoveDiacritics,false,outputEncodingType);
                 general_out = false;
                 break;
             case 2:
-                handleSearch(outputFilePath, inputText, null,false);
+                handleSearch(outputFilePath, inputText, null,false,outputEncodingType);
                 general_out = false;
                 break;
             case 3:
-                handleSearch(outputFilePath, inputText, null,true);
+                handleSearch(outputFilePath, inputText, null,true,outputEncodingType);
                 general_out = false;
                 break;
         }
 
         if(general_out) {
             switch (outputFormatNum) {
-                case 1: //Buckwater
+                case 1: //Buckwalter
                 default:
                     outPutText = inputText.toBuckwalter();
                     break;
@@ -141,12 +151,16 @@ public class Tools {
 //        System.out.println(outPut);
     }
 
-    private static void handleSearch(String outputFilePath, ArabicText inputText, SearchOptions options, boolean searchRoot) {
+    private static void handleSearch(String outputFilePath,
+                                     ArabicText inputText,
+                                     SearchOptions options,
+                                     boolean searchRoot,
+                                     EncodingType outputEncodingType) {
         AnalysisTable table = null;
         if(options != null && options.equals(SearchOptions.RemoveDiacritics)) {
-            table = listAllReferences(StringUtils.split(inputText.removeDiacritics().toBuckwalter(), "\r\n\t, "),searchRoot);
+            table = listAllReferences(StringUtils.split(inputText.removeDiacritics().toBuckwalter(), "\r\n\t, "),searchRoot,outputEncodingType);
         }else{
-            table = listAllReferences(StringUtils.split(inputText.toBuckwalter(), "\r\n\t, "),searchRoot);
+            table = listAllReferences(StringUtils.split(inputText.toBuckwalter(), "\r\n\t, "),searchRoot,outputEncodingType);
         }
         if(StringUtils.isNotBlank(outputFilePath)){
             table.writeFile(outputFilePath);
@@ -255,8 +269,10 @@ public class Tools {
 
         return wordsAndRoots;
     }
-    public static AnalysisTable listAllReferences(String[] lst, boolean searchRoot){
-        TokenSearch search = new TokenSearch(EncodingType.Buckwalter,
+    public static AnalysisTable listAllReferences(String[] lst,
+                                                  boolean searchRoot,
+                                                  EncodingType outputEncodingType){
+        TokenSearch search = new TokenSearch(outputEncodingType,
                 SearchOptions.RemoveDiacritics);
 
         for (String item:lst) {
