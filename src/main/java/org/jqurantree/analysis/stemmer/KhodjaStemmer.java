@@ -7,11 +7,11 @@ import java.io.InputStreamReader;
 import java.util.Vector;
 
 
-public class ArabicStemmer{
+public class KhodjaStemmer {
     
     // for the get_root function
     private static Vector staticFiles ;
-    static String  pathToStemmerFiles = new StringBuffer ( System.getProperty ( "user.dir" ) + System.getProperty ( "file.separator" ) + "StemmerFiles" + System.getProperty ( "file.separator" ) ).toString ( );
+    static String  pathToStemmerFiles = new StringBuffer ( System.getProperty ( "user.dir" ) + System.getProperty ( "file.separator" ) + "stemming/khodja/StemmerFiles" + System.getProperty ( "file.separator" ) ).toString ( );
 
     private static boolean rootFound = false;
     private static boolean stopwordFound = false;
@@ -33,13 +33,13 @@ public class ArabicStemmer{
     
 
     /** Creates new form ASASinterface */
-    public ArabicStemmer() {
+    public KhodjaStemmer() {
         initComponents();
     }
 
     private static void initComponents()
     {
-        pathToStemmerFiles = new StringBuffer(System.getProperty("user.dir") + System.getProperty("file.separator") + "StemmerFiles" + System.getProperty("file.separator")).toString();
+        pathToStemmerFiles = new StringBuffer(System.getProperty("user.dir") + System.getProperty("file.separator") + "stemming/khodja/StemmerFiles" + System.getProperty("file.separator")).toString();
         rootFound = false;
         stopwordFound = false;
         fromSuffixes = false;

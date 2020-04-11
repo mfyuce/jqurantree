@@ -226,7 +226,18 @@ public class ArabicText implements Iterable<ArabicCharacter> {
 	public String toSimpleEncoding() {
 		return toString(EncodingType.Simple);
 	}
+	/**
+	 * Converts the Arabic text to simple encoding.
+	 *
+	 * @return a <code>string</code> representing the Arabic text using simple
+	 *         encoding
+	 *
+	 * @see SimpleEncoder
+	 */
+	public String toRoot() {
 
+		return toString(EncodingType.Simple);
+	}
 	/**
 	 * Gets the number of characters in the text. Each Arabic letter or Quranic
 	 * symbol, including any attached diacritics, counts as a single character.

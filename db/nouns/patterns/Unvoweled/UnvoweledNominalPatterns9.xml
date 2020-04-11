@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<patterns>
+		<pattern value="أفاعليتان" rules="245" ids="787"/>
+		<pattern value="أفاعليتين" rules="245" ids="790 791"/>
+		<pattern value="أفاعيليات" rules="246" ids="639 640 641 642 643 644 820 821 822 823 824 825"/>
+		<pattern value="أفاعيليان" rules="246" ids="645 826"/>
+		<pattern value="أفاعيليتا" rules="246" ids="652 833"/>
+		<pattern value="أفاعيليتي" rules="246" ids="654 655 835 836"/>
+		<pattern value="أفاعيليون" rules="246" ids="664 845"/>
+		<pattern value="أفاعيليين" rules="246" ids="660 661 668 669 841 842 849 850"/>
+		<pattern value="أفعاءيتان" rules="233 23و" ids="1029 1070 1205"/>
+		<pattern value="أفعاءيتين" rules="233 23و" ids="1032 1033 1073 1074 1208 1209"/>
+		<pattern value="أفعاليتان" rules="235" ids="1265 1707 694"/>
+		<pattern value="أفعاليتين" rules="235" ids="1268 1269 1710 1711 697 698"/>
+		<pattern value="أفعلاءيات" rules="234" ids="1326 1327 1328 1329 1330 1331 1600 1601 1602 1603 1604 1605"/>
+		<pattern value="أفعلاءيان" rules="234" ids="1332 1606"/>
+		<pattern value="أفعلاءيتا" rules="234" ids="1339 1613"/>
+		<pattern value="أفعلاءيتي" rules="234" ids="1341 1342 1615 1616"/>
+		<pattern value="أفعلاءيون" rules="234" ids="1351 1625"/>
+		<pattern value="أفعلاءيين" rules="234" ids="1347 1348 1355 1356 1621 1622 1629 1630"/>
+		<pattern value="أفعلييتان" rules="234" ids="1485"/>
+		<pattern value="أفعلييتين" rules="234" ids="1488 1489"/>
+		<pattern value="أفعوليتان" rules="235" ids="1879"/>
+		<pattern value="أفعوليتين" rules="235" ids="1882 1883"/>
+		<pattern value="أفعياءيات" rules="23ء" ids="1652 1653 1654 1655 1656 1657 721 722 723 724 725 726"/>
+		<pattern value="أفعياءيان" rules="23ء" ids="1658 727"/>
+		<pattern value="أفعياءيتا" rules="23ء" ids="1665 734"/>
+		<pattern value="أفعياءيتي" rules="23ء" ids="1667 1668 736 737"/>
+		<pattern value="أفعياءيون" rules="23ء" ids="1677 746"/>
+		<pattern value="أفعياءيين" rules="23ء" ids="1673 1674 1681 1682 742 743 750 751"/>
+		<pattern value="أفيعليتان" rules="245" ids="1750"/>
+		<pattern value="أفيعليتين" rules="245" ids="1753 1754"/>
+		<pattern value="إفعاليتان" rules="235" ids="1969 2058"/>
+		<pattern value="إفعاليتين" rules="235" ids="1972 1973 2061 2062"/>
+		<pattern value="إفعيليتان" rules="235" ids="2198"/>
+		<pattern value="إفعيليتين" rules="235" ids="2201 2202"/>
+		<pattern value="استفالتان" rules="4و6 4ي6" ids="2539 2540"/>
+		<pattern value="استفالتين" rules="4و6 4ي6" ids="2545 2546 2547 2548"/>
+		<pattern value="استفعاءات" rules="45و 45ي" ids="2554 2555 2556 2557 2558 2559 2560 2561 2562 2563 2564 2565"/>
+		<pattern value="استفعاءان" rules="45و 45ي" ids="2566"/>
+		<pattern value="استفعاءتا" rules="45و 45ي" ids="2573"/>
+		<pattern value="استفعاءتي" rules="45و" ids="2575 2576"/>
+		<pattern value="استفعاءين" rules="45و" ids="2581 2582"/>
+		<pattern value="استفعالات" rules="457" ids="2482 2483 2484 2485 2486 2487 2488 2489 2490 2491 2492 2493 2592 2593 2594 2595 2596 2597 2598 2599 2600 2601 2602 2603"/>
+		<pattern value="استفعالان" rules="457" ids="2494 2604"/>
+		<pattern value="استفعالتا" rules="457" ids="2501 2611"/>
+		<pattern value="استفعالتي" rules="457" ids="2503 2504 2613 2614"/>
+		<pattern value="استفعالين" rules="457" ids="2509 2510 2619 2620"/>
+		<pattern value="استيعالات" rules="و57" ids="2636 2637 2638 2639 2640 2641 2642 2643 2644 2645 2646 2647"/>
+		<pattern value="استيعالان" rules="و57" ids="2648"/>
+		<pattern value="استيعالتا" rules="و57" ids="2655"/>
+		<pattern value="استيعالتي" rules="و57" ids="2657 2658"/>
+		<pattern value="استيعالين" rules="و57" ids="2663 2664"/>
+		<pattern value="افتعاءتان" rules="24و" ids="2795"/>
+		<pattern value="افتعاءتين" rules="24و" ids="2798 2799"/>
+		<pattern value="افتعالتان" rules="246" ids="2833"/>
+		<pattern value="افتعالتين" rules="246" ids="2836 2837"/>
+		<pattern value="افتيالتان" rules="2و6" ids="2871"/>
+		<pattern value="افتيالتين" rules="2و6" ids="2874 2875"/>
+		<pattern value="افدعالتان" rules="246" ids="2909"/>
+		<pattern value="افدعالتين" rules="246" ids="2912 2913"/>
+		<pattern value="افديالتان" rules="2و6" ids="2945"/>
+		<pattern value="افديالتين" rules="2و6" ids="2948 2949"/>
+		<pattern value="افطعالتان" rules="246" ids="2983"/>
+		<pattern value="افطعالتين" rules="246" ids="2986 2987"/>
+		<pattern value="افعاليتان" rules="235" ids="2753"/>
+		<pattern value="افعاليتين" rules="235" ids="2756 2757"/>
+		<pattern value="افعنلالات" rules="2357" ids="3001 3002 3003 3004 3005 3006 3007 3008 3009 3010 3011 3012"/>
+		<pattern value="افعنلالان" rules="2357" ids="3013"/>
+		<pattern value="افعنلالتا" rules="2357" ids="3020"/>
+		<pattern value="افعنلالتي" rules="2357" ids="3022 3023"/>
+		<pattern value="افعنلالين" rules="2357" ids="3028 3029"/>
+		<pattern value="انفعالتان" rules="346" ids="3059"/>
+		<pattern value="انفعالتين" rules="346" ids="3062 3063"/>
+		<pattern value="تافيليتان" rules="ء35" ids="3167"/>
+		<pattern value="تافيليتين" rules="ء35" ids="3170 3171"/>
+		<pattern value="تفاعيليات" rules="246" ids="3351 3352 3353 3354 3355 3356"/>
+		<pattern value="تفاعيليان" rules="246" ids="3357"/>
+		<pattern value="تفاعيليتا" rules="246" ids="3364"/>
+		<pattern value="تفاعيليتي" rules="246" ids="3366 3367"/>
+		<pattern value="تفاعيليون" rules="246" ids="3376"/>
+		<pattern value="تفاعيليين" rules="246" ids="3372 3373 3380 3381"/>
+		<pattern value="تفعلييتان" rules="234" ids="3851"/>
+		<pattern value="تفعلييتين" rules="234" ids="3854 3855"/>
+		<pattern value="تفعيليتان" rules="235" ids="3757 3758"/>
+		<pattern value="تفعيليتين" rules="235" ids="3763 3764 3765 3766"/>
+		<pattern value="فاعاتيتان" rules="133" ids="6608"/>
+		<pattern value="فاعاتيتين" rules="133" ids="6611 6612"/>
+		<pattern value="فاعوليتان" rules="135" ids="6076 6181 6272"/>
+		<pattern value="فاعوليتين" rules="135" ids="6079 6080 6184 6185 6275 6276"/>
+		<pattern value="فعائليتان" rules="125" ids="16146 4135 7210"/>
+		<pattern value="فعاعليتان" rules="125" ids="7280"/>
+		<pattern value="فعاعليتين" rules="125" ids="16229 16230 4169 4170 7283 7284"/>
+		<pattern value="فعاعيليات" rules="126" ids="4204 4205 4206 4207 4208 4209 7318 7319 7320 7321 7322 7323"/>
+		<pattern value="فعاعيليان" rules="126" ids="4210 7324"/>
+		<pattern value="فعاعيليتا" rules="126" ids="4217 7331"/>
+		<pattern value="فعاعيليتي" rules="126" ids="4219 4220 7333 7334"/>
+		<pattern value="فعاعيليون" rules="126" ids="4229 7343"/>
+		<pattern value="فعاعيليين" rules="126" ids="4225 4226 4233 4234 7339 7340 7347 7348"/>
+		<pattern value="فعالاتيات" rules="124" ids="7399 7400 7401 7402 7403 7404"/>
+		<pattern value="فعالاتيان" rules="124" ids="7405"/>
+		<pattern value="فعالاتيتا" rules="124" ids="7412"/>
+		<pattern value="فعالاتيتي" rules="124" ids="7414 7415"/>
+		<pattern value="فعالاتيون" rules="124" ids="7424"/>
+		<pattern value="فعالاتيين" rules="124" ids="7420 7421 7428 7429"/>
+		<pattern value="فعالايتين" rules="124" ids="7455 7456"/>
+		<pattern value="فعالليتان" rules="1245" ids="13142 7550"/>
+		<pattern value="فعالليتين" rules="1245" ids="13145 13146 7553 7554"/>
+		<pattern value="فعاليتيات" rules="124" ids="7579 7580 7581 7582 7583 7584 7732 7733 7734 7735 7736 7737"/>
+		<pattern value="فعاليتيان" rules="124" ids="7585 7738"/>
+		<pattern value="فعاليتيتا" rules="124" ids="7745"/>
+		<pattern value="فعاليتيتي" rules="124" ids="7587 7588 7747 7748"/>
+		<pattern value="فعاليتيون" rules="124" ids="7594 7757"/>
+		<pattern value="فعاليتيين" rules="124" ids="7591 7592 7596 7597 7753 7754 7761 7762"/>
+		<pattern value="فعاليليات" rules="1246" ids="4351 4352 4353 4354 4355 4356 7614 7615 7616 7617 7618 7619"/>
+		<pattern value="فعاليليان" rules="1246" ids="4357 7620"/>
+		<pattern value="فعاليليتا" rules="1246" ids="4364 7627"/>
+		<pattern value="فعاليليتي" rules="1246" ids="4366 4367 7629 7630"/>
+		<pattern value="فعاليليون" rules="1246" ids="4376 7639"/>
+		<pattern value="فعاليليين" rules="1246" ids="4372 4373 4380 4381 7635 7636 7643 7644"/>
+		<pattern value="فعالينيات" rules="124" ids="7655 7656 7657 7658 7659 7660"/>
+		<pattern value="فعالينيان" rules="124" ids="7661"/>
+		<pattern value="فعالينيتا" rules="124" ids="7668"/>
+		<pattern value="فعالينيتي" rules="124" ids="7670 7671"/>
+		<pattern value="فعالينيون" rules="124" ids="7680"/>
+		<pattern value="فعالينيين" rules="124" ids="7676 7677 7684 7685"/>
+		<pattern value="فعالييتان" rules="124" ids="10235 13232 16433 4443 7790 7888 8300"/>
+		<pattern value="فعالييتين" rules="124" ids="10238 10239 13235 13236 16436 16437 4446 4447 7793 7794 7891 7892 8303 8304"/>
+		<pattern value="فعايايتان" rules="12ء 12و 12ي" ids="4485 7947"/>
+		<pattern value="فعايايتين" rules="12ء 12و" ids="4488 4489 7950 7951"/>
+		<pattern value="فعلاءيتان" rules="123" ids="10862 12581 13473"/>
+		<pattern value="فعلاءيتين" rules="123" ids="10865 10866 12584 12585 13476 13477"/>
+		<pattern value="فعلاتيتان" rules="123" ids="10926 13682 13860 14517 16785 17490 8419"/>
+		<pattern value="فعلاتيتين" rules="123" ids="10929 10930 13685 13686 13863 13864 14520 14521 16788 16789 17493 17494 8422 8423"/>
+		<pattern value="فعلاليتان" rules="1235" ids="10994 14974 14975 17558"/>
+		<pattern value="فعلاليتين" rules="1235" ids="10997 10998 14980 14981 14982 14983 17561 17562"/>
+		<pattern value="فعلالييات" rules="1235" ids="15001 15002 15003 15004 15005 15006"/>
+		<pattern value="فعلالييان" rules="1235" ids="15007"/>
+		<pattern value="فعلالييتا" rules="1235" ids="15014"/>
+		<pattern value="فعلالييتي" rules="1235" ids="15016 15017"/>
+		<pattern value="فعلالييون" rules="1235" ids="15026"/>
+		<pattern value="فعلالييين" rules="1235" ids="15022 15023 15030 15031"/>
+		<pattern value="فعلانيتان" rules="123" ids="11072 12642 15084 15920 17638 17639 5549 8474"/>
+		<pattern value="فعلانيتين" rules="123" ids="11075 11076 12645 12646 15087 15088 15923 15924 17644 17645 17646 17647 5552 5553 8477 8478"/>
+		<pattern value="فعللانيات" rules="1234" ids="11239 11240 11241 11242 11243 11244 15208 15209 15210 15211 15212 15213"/>
+		<pattern value="فعللانيان" rules="1234" ids="11245 11246 15214"/>
+		<pattern value="فعللانيتا" rules="1234" ids="11253 15221"/>
+		<pattern value="فعللانيتي" rules="1234" ids="11255 11256 15223 15224"/>
+		<pattern value="فعللانيون" rules="1234" ids="11270 15233"/>
+		<pattern value="فعللانيين" rules="1234" ids="11263 11264 11265 11266 11275 11276 15229 15230 15237 15238"/>
+		<pattern value="فعللييتان" rules="1234" ids="11417 15330"/>
+		<pattern value="فعللييتين" rules="1234" ids="11420 11421 15333 15334"/>
+		<pattern value="فعلوتيتان" rules="123" ids="15375 8569"/>
+		<pattern value="فعلوتيتين" rules="123" ids="15378 15379 8572 8573"/>
+		<pattern value="فعلوليتان" rules="1235" ids="11501 15443 15444 17788 6918"/>
+		<pattern value="فعلوليتين" rules="1235" ids="11504 11505 15449 15450 15451 15452 17791 17792 6921 6922"/>
+		<pattern value="فعلونيتان" rules="123" ids="11549 15496 8611"/>
+		<pattern value="فعلونيتين" rules="123" ids="11552 11553 15499 15500 8614 8615"/>
+		<pattern value="فعلياتيات" rules="123" ids="15144 15145 15146 15147 15148 15149"/>
+		<pattern value="فعلياتيان" rules="123" ids="15150"/>
+		<pattern value="فعلياتيتا" rules="123" ids="15157"/>
+		<pattern value="فعلياتيتي" rules="123" ids="15159 15160"/>
+		<pattern value="فعلياتيون" rules="123" ids="15169"/>
+		<pattern value="فعلياتيين" rules="123" ids="15165 15166 15173 15174"/>
+		<pattern value="فعليليتان" rules="1235" ids="15978 17916"/>
+		<pattern value="فعليليتين" rules="1235" ids="15981 15982 17919 17920"/>
+		<pattern value="فعهاتيتان" rules="122" ids="14684"/>
+		<pattern value="فعهاتيتين" rules="122" ids="14687 14688"/>
+		<pattern value="فعواتيتان" rules="12ي" ids="4707"/>
+		<pattern value="فعواتيتين" rules="12ي" ids="4710 4711"/>
+		<pattern value="فعولييتان" rules="124" ids="9139"/>
+		<pattern value="فعولييتين" rules="124" ids="9142 9143"/>
+		<pattern value="فعيانيتان" rules="12و" ids="18133"/>
+		<pattern value="فعيانيتين" rules="12و 12ي" ids="11707 11708 15757 15758 18136 18137 8814 8815"/>
+		<pattern value="فواعليتان" rules="145" ids="11881 11922 5798"/>
+		<pattern value="فواعليتين" rules="145" ids="11884 11885 11925 11926 5801 5802"/>
+		<pattern value="فواعيليات" rules="146" ids="11951 11952 11953 11954 11955 11956"/>
+		<pattern value="فواعيليان" rules="146" ids="11957"/>
+		<pattern value="فواعيليتا" rules="146" ids="11964"/>
+		<pattern value="فواعيليتي" rules="146" ids="11966 11967"/>
+		<pattern value="فواعيليون" rules="146" ids="11976"/>
+		<pattern value="فواعيليين" rules="146" ids="11972 11973 11980 11981"/>
+		<pattern value="فواعييتان" rules="14و" ids="12050"/>
+		<pattern value="فواعييتين" rules="14و" ids="12053 12054"/>
+		<pattern value="فياعليتان" rules="145" ids="12196"/>
+		<pattern value="فياعليتين" rules="145" ids="12199 12200"/>
+		<pattern value="فيلانيتان" rules="1و3" ids="18279"/>
+		<pattern value="فيلانيتين" rules="1و3" ids="18282 18283"/>
+		<pattern value="مآعيليتان" rules="ء35" ids="18667 18797"/>
+		<pattern value="مآعيليتين" rules="ء35" ids="18670 18671 18800 18801"/>
+		<pattern value="متفاعاتان" rules="35و" ids="20840"/>
+		<pattern value="متفاعاتين" rules="35و" ids="20843 20844"/>
+		<pattern value="متفاعلتان" rules="356" ids="20791 20897 20979"/>
+		<pattern value="متفاعلتين" rules="356" ids="20794 20795 20900 20901 20982 20983"/>
+		<pattern value="متفاعيتان" rules="35و" ids="21019"/>
+		<pattern value="متفاعيتين" rules="35و" ids="21022 21023"/>
+		<pattern value="متفعللتان" rules="3456" ids="20715 20756 21421 21471 21519"/>
+		<pattern value="متفعللتين" rules="3456" ids="20718 20719 20759 20760 21424 21425 21474 21475 21522 21523"/>
+		<pattern value="متفعليتان" rules="345" ids="21235 21354"/>
+		<pattern value="متفعليتين" rules="345" ids="21238 21239 21357 21358"/>
+		<pattern value="مستفالتان" rules="4و6 4ي6" ids="21678 21679"/>
+		<pattern value="مستفالتين" rules="4و6 4ي6" ids="21684 21685 21686 21687"/>
+		<pattern value="مستفاليات" rules="4ي6" ids="21710 21711 21712 21713 21714 21715"/>
+		<pattern value="مستفاليان" rules="4ي6" ids="21716"/>
+		<pattern value="مستفاليتا" rules="4ي6" ids="21723"/>
+		<pattern value="مستفاليتي" rules="4ي6" ids="21725 21726"/>
+		<pattern value="مستفاليون" rules="4ي6" ids="21735"/>
+		<pattern value="مستفاليين" rules="4ي6" ids="21731 21732 21739 21740"/>
+		<pattern value="مستفعاتان" rules="45و 45ي" ids="22007"/>
+		<pattern value="مستفعاتين" rules="45و" ids="22010 22011"/>
+		<pattern value="مستفعلاتي" rules="456" ids="22051 22052 22053 22078 22081"/>
+		<pattern value="مستفعلتان" rules="456" ids="21843 21958 22103 22104 22201"/>
+		<pattern value="مستفعلتين" rules="456" ids="21846 21847 21961 21962 22109 22110 22111 22112 22204 22205"/>
+		<pattern value="مستفعيتان" rules="45و" ids="22241"/>
+		<pattern value="مستفعيتين" rules="45و" ids="22244 22245"/>
+		<pattern value="مستفيلتان" rules="4و6" ids="21925"/>
+		<pattern value="مستفيلتين" rules="4و6" ids="21928 21929"/>
+		<pattern value="مفائليتان" rules="2و5" ids="18910"/>
+		<pattern value="مفائليتين" rules="2و5" ids="18913 18914"/>
+		<pattern value="مفاعليتان" rules="245" ids="18952 19028 22891 23023 27631"/>
+		<pattern value="مفاعليتين" rules="245" ids="18955 18956 19031 19032 22894 22895 23026 23027 27634 27635"/>
+		<pattern value="مفاعيليات" rules="246" ids="18694 18695 18696 18697 18698 18699 19061 19062 19063 19064 19065 19066"/>
+		<pattern value="مفاعيليان" rules="246" ids="18700 19067"/>
+		<pattern value="مفاعيليتا" rules="246" ids="18707 19074"/>
+		<pattern value="مفاعيليتي" rules="246" ids="18709 18710 19076 19077"/>
+		<pattern value="مفاعيليون" rules="246" ids="18719 19086"/>
+		<pattern value="مفاعيليين" rules="246" ids="18715 18716 18723 18724 19082 19083 19090 19091"/>
+		<pattern value="مفتعليتان" rules="245" ids="25142 25259"/>
+		<pattern value="مفتعليتين" rules="245" ids="25145 25146 25262 25263"/>
+		<pattern value="مفدعليتان" rules="245" ids="25614"/>
+		<pattern value="مفدعليتين" rules="245" ids="25617 25618"/>
+		<pattern value="مفعاتيتان" rules="233" ids="19304"/>
+		<pattern value="مفعاتيتين" rules="233" ids="19307 19308"/>
+		<pattern value="مفعاليتان" rules="235" ids="27856"/>
+		<pattern value="مفعاليتين" rules="235" ids="27859 27860"/>
+		<pattern value="مفعلانيات" rules="234" ids="19817 19818 19819 19820 19821 19822"/>
+		<pattern value="مفعلانيان" rules="234" ids="19823"/>
+		<pattern value="مفعلانيتا" rules="234" ids="19830"/>
+		<pattern value="مفعلانيتي" rules="234" ids="19832 19833"/>
+		<pattern value="مفعلانيون" rules="234" ids="19842"/>
+		<pattern value="مفعلانيين" rules="234" ids="19838 19839 19846 19847"/>
+		<pattern value="مفعلليتان" rules="2345" ids="24060 24151 26326"/>
+		<pattern value="مفعلليتين" rules="2345" ids="24063 24064 24154 24155 26329 26330"/>
+		<pattern value="مفعلييتان" rules="234" ids="19969 20413"/>
+		<pattern value="مفعلييتين" rules="234" ids="19972 19973 20416 20417"/>
+		<pattern value="مفعنللتان" rules="2356" ids="26561 26609"/>
+		<pattern value="مفعنللتين" rules="2356" ids="26564 26565 26612 26613"/>
+		<pattern value="مفعولاتيا" rules="235" ids="20134 20138"/>
+		<pattern value="مفعولاتية" rules="235" ids="20146 20147 20148 20149 20150 20151"/>
+		<pattern value="مفعولاتيو" rules="235" ids="20163"/>
+		<pattern value="مفعولاتيي" rules="235" ids="20158 20159 20166 20167"/>
+		<pattern value="مفعوليتان" rules="235" ids="20247 20248"/>
+		<pattern value="مفعوليتين" rules="235" ids="20253 20254 20255 20256"/>
+		<pattern value="مفعونيتان" rules="23ي" ids="26773"/>
+		<pattern value="مفعونيتين" rules="23ي" ids="26776 26777"/>
+		<pattern value="منفعليتان" rules="345" ids="27313"/>
+		<pattern value="منفعليتين" rules="345" ids="27316 27317"/>
+		<pattern value="يآعيليتان" rules="ء35" ids="28151"/>
+		<pattern value="يآعيليتين" rules="ء35" ids="28154 28155"/>
+		<pattern value="يفعوليتان" rules="235" ids="28194"/>
+		<pattern value="يفعوليتين" rules="235" ids="28197 28198"/>
+
+</patterns>

@@ -1,0 +1,573 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+		<toolwords>
+			<toolword unvoweledform="أيا" voweledform="أَيَا" type="حَرف نداء - للبعيد" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أجل" voweledform="أَجَلْ" type="حَرف جواب" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إذن" voweledform="إِذَنْ" type="حَرف جواب وجزاء – ينصِب المُضارِع" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إذا" voweledform="إِذًا" type="حَرف جواب وجزاء – ينصِب المُضارِع" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إن" voweledform="إِنْ" type="حَرف شرط أو نفي أو توكيد أو زائد" prefixeclass="C1C2C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أن" voweledform="أَنْ" type="حَرف مصدريّ ناصِب للمُضارِع أو حَرف توكِيد أو تفسير أو زائِد" prefixeclass="C1C2C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إن" voweledform="إِنَّ" type="حَرف توكيد ناسِخ" prefixeclass="C1C2C3C4N4" suffixeclass="C1C2C3V1V2" priority="301">
+			</toolword>
+			<toolword unvoweledform="أن" voweledform="أَنَّ" type="حَرف توكيد ناسِخ" prefixeclass="C1C2C3C4N4" suffixeclass="C1C2C3V1V2" priority="301">
+			</toolword>
+			<toolword unvoweledform="أم" voweledform="أَمْ" type="حَرف عطف" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أما" voweledform="أَمَا" type="حَرف استفتاح" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أما" voweledform="أَمَّا" type="حَرف شَرط وتَفصِيل وتَوكِيد" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إما" voweledform="إِمَّا" type="حَرف مُرَكَّب (إنْ+ما)" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أو" voweledform="أَوْ" type="حَرف عَطف" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ألا" voweledform="أَلا" type="حَرف يُفِيد التَّنبِيه والإنكار والتَّمَنِّي والاستِفهام عن النَّفي و التَّحضِيض" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إلا" voweledform="إِلَّا" type="أداة استِثناء أوحَرف عَطف أوحَرف زائِد" prefixeclass="C1C2" suffixeclass="C1C2C3N1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ألا" voweledform="أَلاَّ" type="حَرف يُفِيد التَّحضِيض" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إلى" voweledform="إِلَى" type="حرف جر" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إلي" voweledform="إِلَيْ" type="جار ومجرور" prefixeclass="C1C2C3C4" suffixeclass="C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="إي" voweledform="إِي" type="حَرف جواب " prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أي" voweledform="أَيْ" type="حَرف نداء أو حَرف تَفسِير" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إذ" voweledform="إِذْ" type="حَرف فُجائِيّ أوحَرف تَعلِيل" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إذما" voweledform="إِذْما" type="أداة شرط " prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إذا" voweledform="إِذا" type="حَرف فُجائِيّ" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="بل" voweledform="بَلْ" type="حَرف عطف" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="بلى" voweledform="بَلَى" type="حَرف جواب لإبطال النَّفي" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="بيد" voweledform="بَيْدَ" type="اسم منصوب على الاستِثناء (بمعنى غَيْر)" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ثم" voweledform="ثُمَّ" type="حَرف عَطف" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="جلل" voweledform="جَلَلْ" type="حَرف جواب بمعنى (نَعَم)" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="حاشا" voweledform="حاشا" type="أداة استِثناء" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="حتى" voweledform="حَتَّى" type="حرف نصب وجرّ و عَطف وابتِداء" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="خلا" voweledform="خَلاَ" type="أداة استِثناء" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="رب" voweledform="رُبَّ" type="حرف جر" prefixeclass="C1C2C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="سوف" voweledform="سَوْفَ" type="حَرف تَسوِيف (للمُضارِع)" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="سوى" voweledform="سِوَى" type="حرف استثناء" prefixeclass="C1C2" suffixeclass="C1" priority="310">
+			</toolword>
+			<toolword unvoweledform="سوا" voweledform="سِوَا" type="حرف استثناء" prefixeclass="C1C2" suffixeclass="C2C3N1" priority="310">
+			</toolword>
+			<toolword unvoweledform="سيما" voweledform="سِيَّما" type="تَركِيبٌ من الاسم (سِيّ) بمعنى (مِثْل)، و (ما) المَوصُوفة" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="عدا" voweledform="عَدَا" type="أداة استِثناء" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="على" voweledform="عَلَى" type="حَرف جرّ أو ظَرف" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="علي" voweledform="عَلَيْ" type="جار ومجرور" prefixeclass="C1C2C3C4" suffixeclass="C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="عن" voweledform="عَنْ" type="حَرف جرّ أو حرف مصدري أو ظَرف" prefixeclass="C1C2C3C4" suffixeclass="C1C2C3N1" priority="301">
+			</toolword>
+			<toolword unvoweledform="غير" voweledform="غَيْر" type="أداة استِثناء" prefixeclass="C1C2" suffixeclass="C1C2C3N1" priority="301">
+			</toolword>
+			<toolword unvoweledform="في" voweledform="فِي" type="حرف جر" prefixeclass="C1C2C3C4" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="قد" voweledform="قَدْ" type="حَرف تَحقِيق وتَقرِيب" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="كي" voweledform="كَيْ" type="حَرف مصدريّ ناصِب للمُضارِع" prefixeclass="C1C2N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="كأي" voweledform="كَأَيٍّ" type="تَركِيب من (كاف التَّشبِيه) و (أيّ)" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="كذا" voweledform="كَذَا" type="أداة يُكنى بها عن العَدَد" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="كلا" voweledform="كَلاَّ" type="أداة تُستَخدَم للزَّجر والرَّدع" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="كأن" voweledform="كَأَنَّ" type="حَرف تَشبِيه ناسِخ" prefixeclass="C1C2" suffixeclass="C1C2C3V1" priority="301">
+			</toolword>
+			<toolword unvoweledform="كلا" voweledform="كِلا" type="اسم جامِد" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="كلتا" voweledform="كِلْتا" type="اسم جامِد" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="لا" voweledform="لا" type="أداة نَفي أو نهي أو حرف زائد" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="لات" voweledform="لاتَ" type="أداة نَفي" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="لو" voweledform="لَوْ" type="أداة شرط أو حَرف يُفِيد التَّمَنِّي أو حَرف مَصدَرِيّ" prefixeclass="C1C2C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="لولا" voweledform="لَوْلا" type="حَرف امتِناع لوُجُود أو حَرف يُفِيد التَّحضِيض أو أداة تُستَخدَم للزَّجر والتَّوبِيخ" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="لوما" voweledform="لَوْما" type="حَرف امتِناع لوُجُود أو حَرف يُفِيد التَّحضِيض أو أداة تُستَخدَم للزَّجر والتَّوبِيخ" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="لم" voweledform="لَمْ" type="حَرف نَفي وجَزم" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="لما" voweledform="لَمَّا" type="ظرف أو حَرف جَزم أو حَرف استِثناء" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="لن" voweledform="لَنْ" type="حَرف نَفي ونَصب" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ليت" voweledform="لَيْتَ" type="حَرف تَمَنِّي ناسِخ" prefixeclass="C1C2" suffixeclass="C1C2C3V1" priority="301">
+			</toolword>
+			<toolword unvoweledform="لعل" voweledform="لَعَلَّ" type="حَرف تَرَجِّي ناسِخ" prefixeclass="C1C2" suffixeclass="C1C2C3V1" priority="301">
+			</toolword>
+			<toolword unvoweledform="لكن" voweledform="لَكِنَّ" type="حَرف استِدراك ناسِخ" prefixeclass="C1C2" suffixeclass="C1C2C3V1" priority="301">
+			</toolword>
+			<toolword unvoweledform="لكن" voweledform="لَكِنْ" type="حَرف ابتِداء" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ما" voweledform="ما" type="أداة نَفي أو أداة تَعَجُّب أو حَرف مَصدَرِيّ حَرف زائِد أو ظَرف" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="من" voweledform="مِنْ" type="حرف جر" prefixeclass="C1C2C3C4" suffixeclass="C1C2C3N1" priority="301">
+			</toolword>
+			<toolword unvoweledform="مهما" voweledform="مَهْمَا" type="أداة شرط" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="مذ" voweledform="مُذْ" type="حَرف جَرّ" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="منذ" voweledform="مُنْذُ" type="حَرف جَرّ" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="نعم" voweledform="نَعَمْ" type="حَرف جواب للتَّصدِيق والإعلام" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ها" voweledform="ها" type="حَرف تَنبِيه" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هل" voweledform="هَلْ" type="أداة استفهام" prefixeclass="C1C2" suffixeclass="C1" priority="301">			
+			</toolword>
+			<toolword unvoweledform="هكذا" voweledform="هَكَذَا" type="أداة" prefixeclass="C1C2" suffixeclass="C1" priority="303">
+			</toolword>
+			<toolword unvoweledform="هيا" voweledform="هَيَا" type="حرف نداء" prefixeclass="C1" suffixeclass="C1" priority="308">
+			</toolword>
+			<toolword unvoweledform="وا" voweledform="وَا" type="حَرف نداء - للنُّدبة" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="يا" voweledform="يا" type="حَرف نداء - للبعيد" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أنا" voweledform="أَنا" type="ضَمِير المُتَكَلِّم – للمُفرَد بِنَوْعَيْه" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="نحن" voweledform="نَحْنُ" type="ضَمير المُتَكَلِّم – للمُثَنَّى والجَمع بِنَوْعَيْه" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أنت" voweledform="أَنْتَ" type="ضَمِير المُخاطَب – للمُفرَد المُذَكَّر" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أنت" voweledform="أَنْتِ" type="ضَمِير المُخاطَب – للمُفرَد المُؤَنَّث" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أنتما" voweledform="أَنتُما" type="ضَمِير المُخاطَب – للمُثَنَّى بِنَوْعَيْه" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أنتم" voweledform="أَنْتُم" type="ضَمِير المُخاطَب – للجمع المُذَكَّر" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أنتن" voweledform="أَنْتُنَّ" type="ضَمِير المُخاطَب – للجمع المُؤَنَّث" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هو" voweledform="هُوَ" type="ضَمِير الغائِب – للمُفرَد المُذَكَّر" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هي" voweledform="هِيَ" type="ضَمِير الغائِب – للمُفرَد المُؤَنَّث" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هما" voweledform="هُما" type="ضَمِير الغائِب – للمُثَنَّى بِنَوْعَيْه" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هم" voweledform="هُمْ" type="ضَمِير الغائِب – للجمع المُذَكَّر" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هن" voweledform="هُنَّ" type="ضَمِير الغائِب – للجمع المُؤَنَّث" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إياي" voweledform="إِيَّايَ" type="ضَمِير المُتَكَلِّم – للمُفرَد بِنَوْعَيْه" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إيانا" voweledform="إِيَّانا" type="ضَمير المُتَكَلِّم – للمُثَنَّى والجَمع بِنَوْعَيْه" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إياك" voweledform="إِيَّاكَ" type="ضَمِير المُخاطَب – للمُفرَد المُذَكَّر" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إياك" voweledform="إِيَّاكِ" type="ضَمِير المُخاطَب – للمُفرَد المُؤَنَّث" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إياكما" voweledform="إِيَّاكُما" type="ضَمِير المُخاطَب – للمُثَنَّى بِنَوْعَيْه" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إياكم" voweledform="إِيَّاكُم" type="ضَمِير المُخاطَب – للجمع المُذَكَّر" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إياكن" voweledform="إِيَّاكُنَّ" type="ضَمِير المُخاطَب – للجمع المُؤَنَّث" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إياه" voweledform="إِيَّاهُ" type="ضَمِير الغائِب – للمُفرَد المُذَكَّر" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إياها" voweledform="إِيَّاها" type="ضَمِير الغائِب – للمُفرَد المُؤَنَّث" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إياهما" voweledform="إِيَّاهُما" type="ضَمِير الغائِب – للمُثَنَّى بِنَوْعَيْه" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إياهم" voweledform="إِيَّاهُم" type="ضَمِير الغائِب – للجمع المُذَكَّر" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إياهن" voweledform="إِيَّاهُنَّ" type="ضَمِير الغائِب – للجمع المُؤَنَّث" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ذا" voweledform="ذا" type="اسم إشارة – للمُفرَد المُذَكَّر" prefixeclass="C1C2C3C4N4" suffixeclass="C1C2" priority="301">
+			</toolword>
+			<toolword unvoweledform="ذي" voweledform="ذِي" type="اسم إشارة – للمُفرَد المُؤَنَّث" prefixeclass="C1C2C3C4N4" suffixeclass="C1C2" priority="301">
+			</toolword>
+			<toolword unvoweledform="تي" voweledform="تِي" type="اسم إشارة – للمُفرَد المُؤَنَّث" prefixeclass="C1C2C3C4N4" suffixeclass="C1C2" priority="301">
+			</toolword>
+			<toolword unvoweledform="ذه" voweledform="ذِهْ" type="اسم إشارة – للمُفرَد المُؤَنَّث" prefixeclass="C1C2C3C4N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ته" voweledform="تِهْ" type="اسم إشارة – للمُفرَد المُؤَنَّث" prefixeclass="C1C2C3C4N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ذان" voweledform="ذانِ" type="اسم إشارَة – للمُثَنَّى المُذَكَّر – في حالَة الرَّفع" prefixeclass="C1C2C3C4N4" suffixeclass="C1C2" priority="301">
+			</toolword>
+			<toolword unvoweledform="ذين" voweledform="ذيْنِ" type="اسم إشارَة – للمُثَنَّى المُذَكَّر – في حالَتَي النَّصب والجَرّ" prefixeclass="C1C2C3C4N4" suffixeclass="C1C2" priority="301">
+			</toolword>
+			<toolword unvoweledform="تان" voweledform="تانِ" type="اسم إشارَة – للمُثَنَّى المُؤَنَّث – في حالَة الرَّفع" prefixeclass="C1C2C3C4N4" suffixeclass="C1C2" priority="301">
+			</toolword>
+			<toolword unvoweledform="تين" voweledform="تَيْنِ" type="اسم إشارَة – للمُثَنَّى المُؤَنَّث – في حالَتَي النَّصب والجَرّ" prefixeclass="C1C2C3C4N4" suffixeclass="C1C2" priority="301">
+			</toolword>
+			<toolword unvoweledform="أولاء" voweledform="أَولاء" type="اسم إشارَة – للجمع بِنَوْعَيْهِ" prefixeclass="C1C2C3C4N4" suffixeclass="C1C2" priority="301">
+			</toolword>
+			<toolword unvoweledform="هذا" voweledform="هَذَا" type="اسم إشارة – للمُفرَد المُذَكَّر" prefixeclass="C1C2C3C4N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هذه" voweledform="هَذِهِ" type="اسم إشارة – للمُفرَد المُؤَنَّث" prefixeclass="C1C2C3C4N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هذان" voweledform="هَذَان" type="اسم إشارَة – للمُثَنَّى المُذَكَّر – في حالَة الرَّفع" prefixeclass="C1C2C3C4N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هذين" voweledform="هَذَيْن" type="اسم إشارَة – للمُثَنَّى المُذَكَّر – في حالَتَي النَّصب والجَرّ" prefixeclass="C1C2C3C4N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هاتان" voweledform="هَاتَانِ" type="اسم إشارَة – للمُثَنَّى المُؤَنَّث – في حالَة الرَّفع" prefixeclass="C1C2C3C4N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هاتين" voweledform="هَاتَيْن" type="اسم إشارَة – للمُثَنَّى المُؤَنَّث – في حالَتَي النَّصب والجَرّ" prefixeclass="C1C2C3C4N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هؤلاء" voweledform="هَؤُلاء" type="اسم إشارَة – للجمع بِنَوْعَيْهِ" prefixeclass="C1C2C3C4N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="تلك" voweledform="تِلْكَ" type="اسم إشارة" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="تلكما" voweledform="تِلْكُمَا" type="اسم إشارة" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="تلكم" voweledform="ْتِلْكُم" type="اسم إشارة" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="تلكن" voweledform="تِلْكُنَّ" type="اسم إشارة" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="ذلك" voweledform="ذَلِكَ" type="اسم إشارة" prefixeclass="C1C2C3C4N4" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="ذلكما" voweledform="ذَلِكُمَا" type="اسم إشارة" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="ذلكم" voweledform="ذَلِكُمْ" type="اسم إشارة" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="ذلكن" voweledform="ذَلِكُنَّ" type="اسم إشارة" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="الذي" voweledform="الَّذِي" type="اسم مَوصُول – للمُفرَد المُذَكَّر" prefixeclass="C1C2C3N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="التي" voweledform="الَّتِي" type="اسم مَوصُول – للمُفرَد المُؤَنَّث" prefixeclass="C1C2C3N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="اللذان" voweledform="اللَّذَانِ" type="اسم مَوصُول – للمُثَنَّى المُذَكَّر – في حالَة الرَّفع" prefixeclass="C1C2C3N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="اللذين" voweledform="اللَّذَيْنِ" type="اسم مَوصُول – للمُثَنَّى المُذَكَّر – في حالَتَي النَّصب والجَرّ" prefixeclass="C1C2C3N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="اللتان" voweledform="اللَّتَانِ" type="مَوصُول – للمُثَنَّى المُؤَنَّث – في حالَة الرَّفع" prefixeclass="C1C2C3N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="اللتين" voweledform="اللَّتَيْنِ" type="اسم مَوصُول – للمُثَنَّى المُؤَنَّث – في حالَتَي النَّصب والجَرّ" prefixeclass="C1C2C3N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="الذين" voweledform="الَّذِين" type="اسم مَوصُول – للجمع المُذَكَّر" prefixeclass="C1C2C3N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="اللاتي" voweledform="اللاَّتِي" type="اسم مَوصُول – للجمع المُؤَنَّث" prefixeclass="C1C2C3N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="اللائي" voweledform="اللاَّئِي" type="اسم مَوصُول – للجمع المُؤَنَّث" prefixeclass="C1C2C3N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="اللواتي" voweledform="اللَّوَاتِي" type="اسم موصول" prefixeclass="C1C2C3C4N4" suffixeclass="C1" priority="103">
+			</toolword>
+			<toolword unvoweledform="من" voweledform="مَنْ" type="اسم مَوصُول – للعاقِل" prefixeclass="C1C2C3C4N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ما" voweledform="مَا" type="اسم مَوصُول – لغير العاقِل" prefixeclass="C1C2C3C4N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أي" voweledform="أَيّ" type="اسم مَوصُول – للعاقِل ولغَيرِه" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="كيف" voweledform="كَيْفَ" type="اسم استِفهام – عن الحال" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="من" voweledform="مَنْ" type="اسم استِفهام – للعاقِل" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ما" voweledform="مَا" type="اسم استِفهام – لغير العاقِل" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ماذا" voweledform="مَاذَا" type="اسم استِفهام – لغير العاقِل" prefixeclass="C1C2N4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="كم" voweledform="كَمْ" type="اسم استِفهام – عن العَدَد" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أين" voweledform="أَيْنَ" type="اسم استِفهام – عن المَكان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أنى" voweledform="أَنَّى" type="اسم استِفهام – عن المَكان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="متى" voweledform="مَتَى" type="اسم استِفهام – عن الزَّمان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أيان" voweledform="أَيَّانَ" type="اسم استِفهام – عن الزَّمان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أي" voweledform="أَيّ" type="اسم استِفهام – للتَّخيِير" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="من" voweledform="مَنْ" type="اسم شَرْط" prefixeclass="C1C2C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ما" voweledform="ما" type="اسم شَرْط" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أين" voweledform="أَيْنَ" type="اسم شَرْط" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="حيثما" voweledform="حَيْثُمَا" type="اسم شَرْط" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أنى" voweledform="أَنَّى" type="اسم شَرْط" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="متى" voweledform="مَتَى" type="اسم شَرْط" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أيان" voweledform="أَيَّانَ" type="اسم شَرْط" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="كيفما" voweledform="كَيْفَمَا" type="اسم شرط" prefixeclass="C1C2" suffixeclass="C1" priority="105">
+			</toolword>
+			<toolword unvoweledform="أي" voweledform="أَيّ" type="اسم شَرْط" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إذا" voweledform="إِذا" type="ظَرف زَمان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إذ" voweledform="إِذْ" type="ظَرف زَمان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="متى" voweledform="مَتَى" type="ظَرف زَمان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أيان" voweledform="أَيَّانَ" type="ظَرف زَمان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="الآن" voweledform="الآنَ" type="ظَرف زَمان" prefixeclass="C1C2C3" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="آنذاك" voweledform="آنَذَاكَ" type="ظَرف زَمان" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أمس" voweledform="أَمْسِ" type="ظَرف زَمان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="مذ" voweledform="مُذْ" type="ظَرف زَمان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="منذ" voweledform="مُنْذُ" type="ظَرف زَمان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="قط" voweledform="قَطُّ" type="ظَرف زَمان" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="فقط" voweledform="فَقَطْ" type="ظرف" prefixeclass="C1" suffixeclass="C1C2C3N1" priority="119">
+			</toolword>
+			<toolword unvoweledform="مع" voweledform="مَعَ" type="ظَرف (للزَّمان والمَكان)" prefixeclass="C1C2C3C4" suffixeclass="C1C2C3N1" priority="301">
+			</toolword>
+			<toolword unvoweledform="حيث" voweledform="حَيْثُ" type="ظَرف مَكان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أين" voweledform="أَيْنَ" type="ظَرف مَكان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أنى" voweledform="أَنَّى" type="ظَرف مَكان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="عند" voweledform="عِنْدَ" type="ظرف" prefixeclass="C1C2C3" suffixeclass="C1C2C3N1" priority="119">
+			</toolword>
+			<toolword unvoweledform="عندما" voweledform="عِنْدَمَا" type="ظرف" prefixeclass="C1C2C3" suffixeclass="C1C2C3N1" priority="119">
+			</toolword>
+			<toolword unvoweledform="دون" voweledform="دُونَ" type="ظرف" prefixeclass="C1C2C3" suffixeclass="C1C2C3N1" priority="119">
+			</toolword>
+			<toolword unvoweledform="دونما" voweledform="دُونَمَا" type="ظرف" prefixeclass="C1C2C3" suffixeclass="C1" priority="119">
+			</toolword>
+			<toolword unvoweledform="إزاء" voweledform="إِزَاءَ" type="ظرف" prefixeclass="C1C2C3" suffixeclass="C1C2C3N1V1V2" priority="119">
+			</toolword>
+			<toolword unvoweledform="يومئذ" voweledform="يَوْمَئِذٍ" type="ظرف" prefixeclass="C1" suffixeclass="C1" priority="119">
+			</toolword>
+			<toolword unvoweledform="كل" voweledform="كُلَّ" type="اسم يفيد الكل" prefixeclass="C1C2C3" suffixeclass="C1C2C3N1" priority="119">
+			</toolword>
+			<toolword unvoweledform="عوض" voweledform="عَوْضُ" type="ظرف" prefixeclass="C1" suffixeclass="C1" priority="119">
+			</toolword>
+			<toolword unvoweledform="ثم" voweledform="ثَمَّ" type="ظَرف مَكان" prefixeclass="C1C2C3C4" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هنا" voweledform="هُنَا" type="ظَرف مَكان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="لدن" voweledform="لَدُنْ" type="ظَرف مَكان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="لدى" voweledform="لَدَى" type="ظَرف مَكان" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>			
+			<toolword unvoweledform="لدي" voweledform="لَدَيْ" type="ظَرف مَكان" prefixeclass="C1C2" suffixeclass="C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="كيف" voweledform="كَيْفَ" type="ظَرف (للزَّمان والمَكان)" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="بينا" voweledform="بَيْنَا" type="ظرف" prefixeclass="C1C2" suffixeclass="C1" priority="119">
+			</toolword>
+			<toolword unvoweledform="أدنى" voweledform="أَدْنَى" type="ظرف" prefixeclass="C1C2" suffixeclass="C1" priority="119">
+			</toolword>
+			<toolword unvoweledform="بين" voweledform="بَيْنَ" type="ظرف" prefixeclass="C1C2" suffixeclass="C1C2C3N1" priority="119">
+			</toolword>
+			<toolword unvoweledform="بينما" voweledform="بَيْنَمَا" type="ظرف" prefixeclass="C1C2" suffixeclass="C1" priority="119">
+			</toolword>
+			<toolword unvoweledform="ريثما" voweledform="رَيْثَمَا" type="ظرف" prefixeclass="C1C2" suffixeclass="C1" priority="119">
+			</toolword>
+			<toolword unvoweledform="قبل" voweledform="قَبْلَ" type="ظرف" prefixeclass="C1C2C3" suffixeclass="C1C2C3N1" priority="119">
+			</toolword>
+			<toolword unvoweledform="بعد" voweledform="بَعْدَ" type="ظرف" prefixeclass="C1C2C3" suffixeclass="C1C2C3N1" priority="119">
+			</toolword>
+			<toolword unvoweledform="بعدما" voweledform="بَعْدَمَا" type="ظرف" prefixeclass="C1C2C3" suffixeclass="C1C2C3N1" priority="119">
+			</toolword>
+			<toolword unvoweledform="هيهات" voweledform="هَيْهاتَ" type="اسم فِعل ماضٍ" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="شتان" voweledform="شَتَّانَ" type="اسم فِعل ماضٍ" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="سرعان" voweledform="سَرْعَانَ" type="اسم فِعل ماضٍ" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="سرعان" voweledform="سُرْعَانَ" type="اسم فِعل ماضٍ" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="واها" voweledform="واهًا" type="اسم فِعل مُضارِع" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="وي" voweledform="وَيْ" type="اسم فِعل مُضارِع" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="وا" voweledform="وا" type="اسم فِعل مُضارِع" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="آه" voweledform="آهٍ" type="اسم فِعل مُضارِع" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أوه" voweledform="أَوْهِ" type="اسم فِعل مُضارِع" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="بخ بخ" voweledform="بَخ ْبَخْ" type="اسم فِعل مُضارِع" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="بخ بخ" voweledform="بَخٍ بَخٍ" type="اسم فِعل مُضارِع" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="صه" voweledform="صَهْ" type="اسم فِعل أمر" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ها" voweledform="ها" type="اسم فِعل أمر" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="آمين" voweledform="آمِين" type="اسم فِعل أمر" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="إيه" voweledform="إِيهِ" type="اسم فِعل أمر" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="مه" voweledform="مَهْ" type="اسم فِعل أمر" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="كخ" voweledform="كُخّ" type="اسم صَوت بِمعنى الفِعل" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="دده" voweledform="دِدَّه" type="اسم صَوت بِمعنى الفِعل" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="تاتا" voweledform="تاتا" type="اسم صَوت بِمعنى الفِعل" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هلا" voweledform="هَلا" type="اسم صَوت بِمعنى الفِعل" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="نخ" voweledform="نِخّ" type="اسم صَوت بِمعنى الفِعل" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="حا" voweledform="حا" type="اسم صَوت بِمعنى الفِعل" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="شي" voweledform="شِي" type="اسم صَوت بِمعنى الفِعل" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ذو" voweledform="ذو" type="مِن الأسماء السِّتَّة في حالة الرَّفع" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أبو" voweledform="أَبو" type="مِن الأسماء السِّتَّة في حالة الرَّفع" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="أخو" voweledform="أَخو" type="مِن الأسماء السِّتَّة في حالة الرَّفع" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="حمو" voweledform="حمو" type="مِن الأسماء السِّتَّة في حالة الرَّفع" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="فو" voweledform="فُو" type="مِن الأسماء السِّتَّة في حالة الرَّفع" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="هنو" voweledform="هَنُو" type="مِن الأسماء السِّتَّة في حالة الرَّفع" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="ذا" voweledform="ذا" type="مِن الأسماء السِّتَّة في حالَة النَّصْب" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أبا" voweledform="أَبا" type="مِن الأسماء السِّتَّة في حالَة النَّصْب" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="أخا" voweledform="أَخا" type="مِن الأسماء السِّتَّة في حالَة النَّصْب" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="حما" voweledform="حَما" type="مِن الأسماء السِّتَّة في حالَة النَّصْب" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="فا" voweledform="فا" type="مِن الأسماء السِّتَّة في حالَة النَّصْب" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="هنا" voweledform="هَنا" type="مِن الأسماء السِّتَّة في حالَة النَّصْب" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="ذي" voweledform="ذِي" type="مِن الأسماء السِّتَّة في حالَة الجَرّ" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="أبي" voweledform="أَبي" type="مِن الأسماء السِّتَّة في حالَة الجَرّ" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="أخي" voweledform="أَخِي" type="مِن الأسماء السِّتَّة في حالَة الجَرّ" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="حمي" voweledform="حَمِي" type="مِن الأسماء السِّتَّة في حالَة الجَرّ" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="في" voweledform="فِي" type="مِن الأسماء السِّتَّة في حالَة الجَرّ" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="هني" voweledform="هَنِي" type="مِن الأسماء السِّتَّة في حالَة الجَرّ" prefixeclass="C1C2" suffixeclass="C1C2C3" priority="301">
+			</toolword>
+			<toolword unvoweledform="نعم" voweledform="نِعْمَ" type="فِعل ماضٍ جامِد" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="حبذا" voweledform="حَبَّذَا" type="فِعل ماضٍ جامِد" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="لاحبذا" voweledform="لاحَبَّذَا" type="فِعل ماضٍ جامِد" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="بئس" voweledform="بِئْسَ" type="فِعل ماضٍ جامِد" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ساء" voweledform="سَاءَ" type="فِعل ماضٍ جامِد" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="ليس" voweledform="لَيْسَ" type="فِعل ماضٍ جامِد" prefixeclass="C1C2" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="عسى" voweledform="عَسَى" type="فِعل ماضٍ جامِد" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="يدع" voweledform="يَدَع" type="فِعل مُضارِع جامِد" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="يذر" voweledform="يَذَر" type="فِعل مُضارِع جامِد" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هب" voweledform="هَبْ" type="فِعل أمر جامِد" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هات" voweledform="هَاتِ" type="فِعل أمر جامِد" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="هلم" voweledform="هَلُمَّ" type="فِعل أمر جامِد" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="تعال" voweledform="تَعَالَ" type="فِعل أمر جامِد" prefixeclass="C1" suffixeclass="C1" priority="301">
+			</toolword>
+			<toolword unvoweledform="بي" voweledform="بِي" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		        <toolword unvoweledform="بك" voweledform="بِكَ" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+			<toolword unvoweledform="بك" voweledform="بِكِ" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		        <toolword unvoweledform="به" voweledform="بِهِ" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+			<toolword unvoweledform="بها" voweledform="بِهَا" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		        <toolword unvoweledform="بنا" voweledform="بِنَا" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		        <toolword unvoweledform="بكما" voweledform="بِكُمَا" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		        <toolword unvoweledform="بهما" voweledform="بِهِمَا" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		        <toolword unvoweledform="بهم" voweledform="بِهِمْ" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		        <toolword unvoweledform="بهن" voweledform="بِهِنَّ" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		      <toolword unvoweledform="لي" voweledform="لِي" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		        <toolword unvoweledform="لك" voweledform="لَكَ" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+			<toolword unvoweledform="لك" voweledform="لَكِ" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		        <toolword unvoweledform="له" voweledform="لَهِ" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+			<toolword unvoweledform="لها" voweledform="لَهَا" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		        <toolword unvoweledform="لنا" voweledform="لَنَا" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		        <toolword unvoweledform="لكما" voweledform="لَكُمَا" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		        <toolword unvoweledform="لهما" voweledform="لَهُمَا" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		        <toolword unvoweledform="لهم" voweledform="لَهُمْ" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		        <toolword unvoweledform="لهن" voweledform="لَهُنَّ" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		        <toolword unvoweledform="منا" voweledform="مِنَّا" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		        <toolword unvoweledform="مما" voweledform="مِمَّا" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword>
+		    <toolword unvoweledform="عنا" voweledform="عَنَّا" type="جار ومجرور" prefixeclass="C1C2" suffixeclass="C1" priority="118">
+			</toolword> 
+			<toolword unvoweledform="إنا" voweledform="إِنَّا" type="حرف ناسخ" prefixeclass="C1" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="إنما" voweledform="إِنَّمَا" type="حرف ناسخ" prefixeclass="C1" suffixeclass="C1" priority="104">
+			</toolword>		
+			<toolword unvoweledform="أنا" voweledform="أَنَّا" type="حرف ناسخ" prefixeclass="C1" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="لكنا" voweledform="لَكِنَّا" type="حرف ناسخ" prefixeclass="C1" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="لست" voweledform="لَسْتُ" type="فعل ناسخ" prefixeclass="C1C2" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="لست" voweledform="لَسْتَ" type="فعل ناسخ" prefixeclass="C1C2" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="لست" voweledform="لَسْتِ" type="فعل ناسخ" prefixeclass="C1C2" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="ليست" voweledform="لَيْسَتْ" type="فعل ناسخ" prefixeclass="C1C2" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="لسنا" voweledform="لَسْنَا" type="فعل ناسخ" prefixeclass="C1C2" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="لستما" voweledform="لَسْتُمَا" type="فعل ناسخ" prefixeclass="C1C2" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="لَيْسَا" voweledform="لَيْسَا" type="فعل ناسخ" prefixeclass="C1C2" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="ليستا" voweledform="لَيْسَتَا" type="فعل ناسخ" prefixeclass="C1C2" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="لستم" voweledform="لَسْتُمْ" type="فعل ناسخ" prefixeclass="C1C2" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="لستن" voweledform="لَسْتُنَّ" type="فعل ناسخ" prefixeclass="C1C2" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="ليسوا" voweledform="لَيْسُوا" type="فعل ناسخ" prefixeclass="C1C2" suffixeclass="C1" priority="104">
+			</toolword>
+			<toolword unvoweledform="لسن" voweledform="لَسْنَ" type="فعل ناسخ" prefixeclass="C1C2" suffixeclass="C1" priority="104">
+			</toolword>			
+		</toolwords>

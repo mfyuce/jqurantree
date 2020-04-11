@@ -27,3 +27,20 @@ Sample;
 
 java -cp jqurantree-1.0.0.jar  org.jqurantree.tools.Tools -o 2 -in <path>\roots.csv -out <path>\roots_bw.csv
 ```
+
+
+# AlKhalil1.1
+mvn install:install-file \
+   -Dfile=AlKhalil.jar \
+   -DgroupId=AlKhalil \
+   -DartifactId=AlKhalil1.1 \
+   -Dversion=1.1 \
+   -Dpackaging=jar \
+   -DgeneratePom=true
+
+
+		<dependency>
+			<groupId>AlKhalil</groupId>
+			<artifactId>AlKhalil1.1</artifactId>
+			<version>1.1</version>
+		</dependency>

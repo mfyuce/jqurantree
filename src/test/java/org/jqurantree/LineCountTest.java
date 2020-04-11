@@ -26,6 +26,7 @@ import org.apache.maven.shared.utils.StringUtils;
 import org.apache.maven.shared.utils.io.FileUtils;
 //import org.jqurantree.analysis.stemmer.ArabicStemmer;
 //import org.jqurantree.analysis.stemmer.ISRI;
+import org.jqurantree.analysis.stemmer.StemmerType;
 import org.jqurantree.arabic.ArabicCharacter;
 import org.jqurantree.core.error.JQuranTreeException;
 import org.jqurantree.orthography.Document;
@@ -41,12 +42,27 @@ public class LineCountTest {
 
 	@Test
 	@Ignore
-	public void extractRootsAndWords() throws IOException {
-		csvWriter("roots.csv",getAllDistinctWordsAndRoots(), false);
+	public void extractRootsAndWordsAlKhalil1_1() throws Exception {
+		csvWriter("stemming/roots_alkhalil1.1_auto.csv",getAllDistinctWordsAndRoots(StemmerType.AlKhalil1_1), false);
+	}
+	@Test
+	@Ignore
+	public void extractRootsAndWordsISRI() throws Exception {
+		csvWriter("stemming/roots_isri_auto.csv",getAllDistinctWordsAndRoots(StemmerType.ISRI), false);
+	}
+	@Test
+	@Ignore
+	public void extractRootsAndWordsKhodja() throws Exception {
+		csvWriter("stemming/roots_khodja_auto.csv",getAllDistinctWordsAndRoots(StemmerType.KODJA), false);
 	}
 	@Test
 //	@Ignore
-	public void extractRootsAndLetters() throws IOException {
+	public void extractRootsAndWordsLucene() throws Exception {
+		csvWriter("stemming/roots_lucene_auto.csv",getAllDistinctWordsAndRoots(StemmerType.Lucene), false);
+	}
+	@Test
+//	@Ignore
+	public void extractRootsAndLetters() throws Exception {
 		Set<String> letters = getAllDistinctLetters();
 		Map<Character, Integer> lettersAndNumbers = new LinkedHashMap<>();
 		int currentNumber=1;
@@ -55,7 +71,7 @@ public class LineCountTest {
 				lettersAndNumbers.put(l.charAt(0), currentNumber++);
 			}
 		}
-		Map<String, String> wordsAndRoots= getAllDistinctWordsAndRoots();
+		Map<String, String> wordsAndRoots= getAllDistinctWordsAndRoots(StemmerType.ISRI);
 		List<String[]> ret = new ArrayList<>();
 		String[] n = new String[MAX_COL];
 		for (int i=0;i<MAX_COL-3;i++){

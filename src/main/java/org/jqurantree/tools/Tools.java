@@ -5,7 +5,10 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.lucene.analysis.ar.ArabicStemmer;
 import org.apache.maven.shared.utils.io.FileUtils;
 import org.jqurantree.analysis.AnalysisTable;
+import org.jqurantree.analysis.stemmer.AlkhalilStemmer;
 import org.jqurantree.analysis.stemmer.ISRI;
+import org.jqurantree.analysis.stemmer.StemmerType;
+import org.jqurantree.analysis.stemmer.StemmingManager;
 import org.jqurantree.arabic.ArabicCharacter;
 import org.jqurantree.arabic.ArabicText;
 import org.jqurantree.arabic.encoding.EncodingType;
@@ -39,14 +42,19 @@ public class Tools {
         inputFile.setRequired(false);
         options.addOption(outputFormat);
 
-        Option output = new Option("o", "operation", true, "operation 1=Diacritics Free Seach 2-Exact Token Search [Default=1]");
+        Option output = new Option("o", "operation", true, "operation 1=Diacritics Free Seach 2-Exact Token Search 3-Root Search [Default=1]");
         output.setRequired(false);
         options.addOption(output);
 
         CommandLineParser parser = new DefaultParser();
         HelpFormatter formatter = new HelpFormatter();
         CommandLine cmd = null;
+        if(args.length==0){
+            formatter.printHelp("jqurantree [input-text]", options);
 
+            System.exit(1);
+            return;
+        }
         try {
             cmd = parser.parse(options, args);
         } catch (ParseException e) {
@@ -100,11 +108,15 @@ public class Tools {
         switch (operationNum){
             case 1:
             default:
-                handleSearch(outputFilePath, inputText, SearchOptions.RemoveDiacritics);
+                handleSearch(outputFilePath, inputText, SearchOptions.RemoveDiacritics,false);
                 general_out = false;
                 break;
             case 2:
-                handleSearch(outputFilePath, inputText, null);
+                handleSearch(outputFilePath, inputText, null,false);
+                general_out = false;
+                break;
+            case 3:
+                handleSearch(outputFilePath, inputText, null,true);
                 general_out = false;
                 break;
         }
@@ -129,12 +141,12 @@ public class Tools {
 //        System.out.println(outPut);
     }
 
-    private static void handleSearch(String outputFilePath, ArabicText inputText, SearchOptions options) {
+    private static void handleSearch(String outputFilePath, ArabicText inputText, SearchOptions options, boolean searchRoot) {
         AnalysisTable table = null;
         if(options != null && options.equals(SearchOptions.RemoveDiacritics)) {
-            table = listAllReferences(StringUtils.split(inputText.removeDiacritics().toBuckwalter(), "\r\n\t, "));
+            table = listAllReferences(StringUtils.split(inputText.removeDiacritics().toBuckwalter(), "\r\n\t, "),searchRoot);
         }else{
-            table = listAllReferences(StringUtils.split(inputText.toBuckwalter(), "\r\n\t, "));
+            table = listAllReferences(StringUtils.split(inputText.toBuckwalter(), "\r\n\t, "),searchRoot);
         }
         if(StringUtils.isNotBlank(outputFilePath)){
             table.writeFile(outputFilePath);
@@ -232,25 +244,27 @@ public class Tools {
 
         return wordsAndRoots;
     }
-    public static Map<String, String> getAllDistinctWordsAndRoots() throws IOException {
+    public static Map<String, String> getAllDistinctWordsAndRoots(StemmerType stemmerType) throws Exception {
         Map<String, String> wordsAndRoots = new LinkedHashMap<String, String>();
-        ISRI stem = new ISRI();
-
         for (Token w : Document.getTokens()) {
             String key = w.removeDiacritics().removeNonLetters().toUnicode();
             if (!wordsAndRoots.containsKey(key)) {
-                wordsAndRoots.put(key, stem.stem(key));
+                wordsAndRoots.put(key, StemmingManager.stem(stemmerType, key));
             }
         }
 
         return wordsAndRoots;
     }
-    public static AnalysisTable listAllReferences(String[] lst){
+    public static AnalysisTable listAllReferences(String[] lst, boolean searchRoot){
         TokenSearch search = new TokenSearch(EncodingType.Buckwalter,
                 SearchOptions.RemoveDiacritics);
 
         for (String item:lst) {
-            search.findSubstring(item);
+            if(searchRoot){
+                search.findRoot(item,SearchOptions.RemoveDiacritics);
+            }else {
+                search.findSubstring(item);
+            }
         }
 
         return search.getResults();

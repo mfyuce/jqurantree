@@ -22,6 +22,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.jqurantree.analysis.AnalysisTable;
+import org.jqurantree.analysis.stemmer.AlkhalilStemmer;
+import org.jqurantree.analysis.stemmer.StemmerType;
+import org.jqurantree.analysis.stemmer.StemmingManager;
+import org.jqurantree.arabic.ArabicText;
 import org.jqurantree.arabic.encoding.EncodingType;
 import org.jqurantree.orthography.Document;
 import org.jqurantree.orthography.Token;
@@ -56,7 +60,7 @@ public class TokenSearch {
 	private final List<SearchItem> items = new ArrayList<SearchItem>();
 	private final EncodingType encodingType;
 	private final SearchOptions options;
-
+	AlkhalilStemmer stemmer = new AlkhalilStemmer();
 	/**
 	 * Creates a new <code>TokenSearch</code> instance, using the specified
 	 * encoding scheme.
@@ -110,6 +114,19 @@ public class TokenSearch {
 	}
 
 	/**
+	 * Adds an exact string match to the list of search criteria, with search
+	 * options.
+	 *
+	 * @param text
+	 *            the string to search for, in the specified encoding scheme
+	 *
+	 * @param options
+	 *            the search options to use when performing this match
+	 */
+	public void findRoot(String text, SearchOptions options) {
+		items.add(new SearchItem(SearchType.Root, text, options));
+	}
+	/**
 	 * Adds a substring match to the list of search criteria.
 	 * 
 	 * @param text
@@ -162,9 +179,14 @@ public class TokenSearch {
 			String diacriticText = token.toString(encodingType);
 			String cleanText = isRemoveDiacritics ? token.removeDiacritics()
 					.toString(encodingType) : null;
-
+			String root = null;
+			try {
+				  root = ArabicText.fromUnicode(StemmingManager.stem(StemmerType.AlKhalil1_1, token.removeDiacritics().removeNonLetters().toUnicode())).toBuckwalter();
+			} catch (Exception e) {
+				root = cleanText;
+			}
 			// Match token.
-			if (isMatch(diacriticText, cleanText)) {
+			if (isMatch(diacriticText, cleanText, root)) {
 				table.add(token.getChapterNumber(), token.getVerseNumber(),
 						token.getTokenNumber(), diacriticText);
 			}
@@ -174,7 +196,7 @@ public class TokenSearch {
 		return table;
 	}
 
-	private boolean isMatch(String diacriticText, String cleanText) {
+	private boolean isMatch(String diacriticText, String cleanText, String root) {
 
 		// Initiate.
 		boolean isValid = false;
@@ -182,7 +204,7 @@ public class TokenSearch {
 		// Match each search item.
 		int size = items.size();
 		for (int i = 0; i < size; i++) {
-			if (isValid = isMatch(items.get(i), diacriticText, cleanText)) {
+			if (isValid = isMatch(items.get(i), diacriticText, cleanText, root)) {
 				break;
 			}
 		}
@@ -192,7 +214,8 @@ public class TokenSearch {
 	}
 
 	private boolean isMatch(SearchItem item, String diacriticText,
-			String cleanText) {
+			String cleanText,
+			String rootText) {
 
 		// Initiate.
 		boolean isValid;
@@ -204,6 +227,10 @@ public class TokenSearch {
 			isValid = text.equals(item.getText());
 		}
 
+		// Root.
+		if (item.getType() == SearchType.Root) {
+			isValid = rootText.equals(item.getText());
+		}
 		// Substring.
 		else {
 			isValid = text.contains(item.getText());
