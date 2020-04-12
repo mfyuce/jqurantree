@@ -21,6 +21,7 @@ package org.jqurantree.core.io;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 
 import org.jqurantree.core.error.Errors;
 import org.jqurantree.core.error.JQuranTreeException;
@@ -40,7 +41,7 @@ public class FileWriter {
 	 * @param filename
 	 *            the path and name of the file, e.g. foo/bar.txt
 	 */
-	public FileWriter(String filename) {
+	public FileWriter(String filename) throws UnsupportedEncodingException {
 
 		// Initiate file stream.
 		FileOutputStream stream;
@@ -51,7 +52,7 @@ public class FileWriter {
 		}
 
 		// Initiate print stream.
-		printStream = new PrintStream(stream);
+		printStream = new PrintStream(stream,false,"UTF8");
 	}
 
 	/**

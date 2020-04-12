@@ -18,6 +18,7 @@
 
 package org.jqurantree.analysis;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -241,7 +242,7 @@ public class AnalysisTable implements Iterable<Object[]> {
 	 * @param filename
 	 *            the name of the file to write to.
 	 */
-	public void writeFile(String filename) {
+	public void writeFile(String filename) throws UnsupportedEncodingException {
 		new TableExport().write(this, 0, rows.size(), filename);
 	}
 
@@ -255,7 +256,7 @@ public class AnalysisTable implements Iterable<Object[]> {
 	 * @param delimiter
 	 *            the delimiter character used to write the file
 	 */
-	public void writeFile(String filename, char delimiter) {
+	public void writeFile(String filename, char delimiter) throws UnsupportedEncodingException {
 		writeFile(filename, delimiter, rows.size());
 	}
 
@@ -273,7 +274,7 @@ public class AnalysisTable implements Iterable<Object[]> {
 	 *            the number of rows to write to file. This value should be a
 	 *            positive number.
 	 */
-	public void writeFile(String filename, char delimiter, int rowCount) {
+	public void writeFile(String filename, char delimiter, int rowCount) throws UnsupportedEncodingException {
 		new TableExport().write(this, 0, rowCount, filename, delimiter);
 	}
 

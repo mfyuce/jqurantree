@@ -155,7 +155,7 @@ public class Tools {
                                      ArabicText inputText,
                                      SearchOptions options,
                                      boolean searchRoot,
-                                     EncodingType outputEncodingType) {
+                                     EncodingType outputEncodingType) throws UnsupportedEncodingException {
         AnalysisTable table = null;
         if(options != null && options.equals(SearchOptions.RemoveDiacritics)) {
             table = listAllReferences(StringUtils.split(inputText.removeDiacritics().toString(outputEncodingType), "\r\n\t, "),searchRoot,outputEncodingType);

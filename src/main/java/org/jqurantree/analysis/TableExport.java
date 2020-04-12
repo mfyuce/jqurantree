@@ -20,6 +20,8 @@ package org.jqurantree.analysis;
 
 import org.jqurantree.core.io.FileWriter;
 
+import java.io.UnsupportedEncodingException;
+
 class TableExport {
 
 	private FileWriter writer;
@@ -28,12 +30,12 @@ class TableExport {
 	private char delimiter;
 
 	public void write(AnalysisTable table, int startRowIndex, int rowCount,
-			String filename) {
+			String filename) throws UnsupportedEncodingException {
 		write(table, startRowIndex, rowCount, filename, DEFAULT_DELIMETER);
 	}
 
 	public void write(AnalysisTable table, int startRowIndex, int rowCount,
-			String filename, char delimiter) {
+			String filename, char delimiter) throws UnsupportedEncodingException {
 
 		// Initiate.
 		this.table = table;

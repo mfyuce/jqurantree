@@ -22,6 +22,8 @@ import org.jqurantree.analysis.AnalysisTable;
 import org.jqurantree.orthography.Chapter;
 import org.jqurantree.orthography.Document;
 
+import java.io.UnsupportedEncodingException;
+
 /**
  * The program below demonstrates how to export an analysis table to a CSV file.
  * The program lists all chapter names in the Quran using Buckwalter
@@ -31,7 +33,7 @@ import org.jqurantree.orthography.Document;
  */
 public class CsvExportExample {
 
-	public static void main() {
+	public static void main() throws UnsupportedEncodingException {
 
 		// Create a new analysis table.
 		AnalysisTable table = new AnalysisTable("ChapterNumber", "ChapterName");
