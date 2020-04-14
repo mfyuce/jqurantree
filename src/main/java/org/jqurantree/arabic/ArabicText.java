@@ -326,7 +326,7 @@ public class ArabicText implements Iterable<ArabicCharacter> {
 		int offset2 = offset;
 
 		// Copy characters.
-		for (int i = 0; i < characterCount; i++) {
+		for (int i = 0; i < characterCount && offset2<this.buffer.length; i++) {
 			buffer[offset1] = this.buffer[offset2];
 			offset1 += ByteFormat.CHARACTER_WIDTH;
 			offset2 += ByteFormat.CHARACTER_WIDTH;

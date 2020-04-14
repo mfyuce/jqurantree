@@ -56,12 +56,17 @@ public class LineCountTest {
 		csvWriter("stemming/roots_khodja_auto.csv",getAllDistinctWordsAndRoots(StemmerType.KODJA), false);
 	}
 	@Test
-//	@Ignore
+	@Ignore
 	public void extractRootsAndWordsLucene() throws Exception {
 		csvWriter("stemming/roots_lucene_auto.csv",getAllDistinctWordsAndRoots(StemmerType.Lucene), false);
 	}
 	@Test
 //	@Ignore
+	public void extractRootsAndWordsQuranicCorpus() throws Exception {
+		csvWriter("stemming/roots_quraniccorpus_auto.csv",getAllDistinctWordsAndRoots(StemmerType.QuranicCorpus), false);
+	}
+	@Test
+	@Ignore
 	public void extractRootsAndLetters() throws Exception {
 		Set<String> letters = getAllDistinctLetters();
 		Map<Character, Integer> lettersAndNumbers = new LinkedHashMap<>();

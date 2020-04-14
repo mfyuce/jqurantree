@@ -2,6 +2,7 @@ package org.jqurantree.analysis.stemmer;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.lucene.analysis.ar.ArabicStemmer;
+import org.jqurantree.analysis.stemmer.arabiccorpus.QuranicCorpusStemmer;
 import org.jqurantree.arabic.ArabicText;
 import org.mortbay.util.StringUtil;
 
@@ -22,6 +23,7 @@ public class StemmingManager {
         stemmerFiles.put(StemmerType.ISRI, "stemming/roots_isri.csv");
         stemmerFiles.put(StemmerType.KODJA, "stemming/roots_khodja.csv");
         stemmerFiles.put(StemmerType.Lucene, "stemming/roots_lucene.csv");
+        stemmerFiles.put(StemmerType.QuranicCorpus, "stemming/roots_quraniccorpus.csv");
         for (Map.Entry<StemmerType, String> kv:stemmerFiles.entrySet()) {
             try {
                 List<String> lines = Files.readAllLines(Paths.get(kv.getValue()));
@@ -55,6 +57,8 @@ public class StemmingManager {
                     return AlkhalilStemmer.stem(text);
                 case KODJA:
                     return khodjaStemmer.stemWord(text);
+                case QuranicCorpus:
+                    return QuranicCorpusStemmer.stem(text);
             }
             return text;
         }else{
