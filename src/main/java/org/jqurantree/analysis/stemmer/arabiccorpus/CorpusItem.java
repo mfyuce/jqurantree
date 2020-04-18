@@ -1,23 +1,20 @@
 package org.jqurantree.analysis.stemmer.arabiccorpus;
 
 import org.apache.commons.lang.StringUtils;
+import org.jqurantree.orthography.Location;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class CorpusItem {
-    private  int surah;
-    private  int ayah;
-    private int word;
+    private Location location;
     private int letter;
     private String text;
     private String Tag;
     private Map<String,String> features;
 
     public CorpusItem(int surah, int ayah, int word, int letter, String text, String tag, Map<String, String> features) {
-        this.surah = surah;
-        this.ayah = ayah;
-        this.word = word;
+        this.location = new Location(surah,ayah,word);
         this.letter = letter;
         this.text = text;
         Tag = tag;
@@ -41,17 +38,7 @@ public class CorpusItem {
                 features);
     }
 
-    public int getSurah() {
-        return surah;
-    }
 
-    public int getAyah() {
-        return ayah;
-    }
-
-    public int getWord() {
-        return word;
-    }
 
     public int getLetter() {
         return letter;
@@ -60,7 +47,9 @@ public class CorpusItem {
     public String getText() {
         return text;
     }
-
+    public Location getLocation() {
+        return location;
+    }
     public String getTag() {
         return Tag;
     }
@@ -68,4 +57,5 @@ public class CorpusItem {
     public Map<String, String> getFeatures() {
         return features;
     }
+
 }

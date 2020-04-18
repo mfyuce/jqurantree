@@ -21,6 +21,8 @@ package org.jqurantree.orthography;
 import org.jqurantree.core.error.Errors;
 import org.jqurantree.core.error.JQuranTreeException;
 
+import java.util.Objects;
+
 /**
  * The location of an element in the orthography model, consisting of a chapter
  * number, verse number and token number. A 1-based numbering scheme is used, so
@@ -146,5 +148,20 @@ public class Location {
 		if (chapterNumber < 1 || chapterNumber > Document.CHAPTER_COUNT) {
 			throw new JQuranTreeException(Errors.INVALID_CHAPTER_NUMBER);
 		}
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Location location = (Location) o;
+		return chapterNumber == location.chapterNumber &&
+				verseNumber == location.verseNumber &&
+				tokenNumber == location.tokenNumber;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(chapterNumber, verseNumber, tokenNumber);
 	}
 }

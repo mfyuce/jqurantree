@@ -180,7 +180,7 @@ public class TokenSearch {
 					.toString(encodingType) : null;
 			String root = null;
 			try {
-				  root = ArabicText.fromUnicode(StemmingManager.stem(StemmerType.AlKhalil1_1, token.removeDiacritics().removeNonLetters().toUnicode())).toString(encodingType);
+				  root = ArabicText.fromUnicode(StemmingManager.stem(StemmerType.QuranicCorpus, token.removeDiacritics().removeNonLetters().toUnicode())).toString(encodingType);
 			} catch (Exception e) {
 				root = cleanText;
 			}

@@ -9,6 +9,7 @@ The library contains;
 * encoders and decoders for converting Arabic text
 * Java classes for searching the text of the Quran
 * The library includes a user guide and API documentation, with examples on using the library to perform basic analysis of Quranic text.
+* Basic stemming algorithms
 
 
 # Command line
@@ -33,3 +34,4 @@ Sample;
 java -cp jqurantree-1.0.0.jar  org.jqurantree.tools.Tools -o 2 -in <path>\roots.csv -out <path>\roots_bw.csv
 ```
 
+Thanks to 	Ghulam Rabani (@grabani) for his friendship and his extensive search and test.
