@@ -215,6 +215,17 @@ public class Tools {
         }
         writer.flush();
     }
+    public static void csvWriter(String fileName, Map<Character, Integer> map) throws IOException {
+        File file = new File(fileName);
+        if(file.exists()) {
+            FileUtils.delete(file);
+        }
+        OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8);
+        for (Map.Entry<Character, Integer> kv:map.entrySet()) {
+            writer.write(kv.getKey() + "," + kv.getValue() + System.lineSeparator());
+        }
+        writer.flush();
+    }
     public static String readFile(String fileName) throws IOException {
         File file = new File(fileName);
         if(!file.exists()) {

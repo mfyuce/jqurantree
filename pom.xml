@@ -53,6 +53,35 @@
 			<artifactId>AlKhalil1.1</artifactId>
 			<version>1.1</version>
 		</dependency>
+		<dependency>
+			<groupId>net.sf.meka</groupId>
+			<artifactId>meka</artifactId>
+			<version>1.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>nz.ac.waikato.cms.weka</groupId>
+			<artifactId>weka-dev</artifactId>
+			<version>3.9.3</version>
+			<scope>test</scope>
+			<type>test-jar</type>
+		</dependency>
+		<dependency>
+			<groupId>nz.ac.waikato.cms.weka</groupId>
+			<artifactId>weka-dev</artifactId>
+			<version>3.9.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.fracpete</groupId>
+			<artifactId>multisearch-weka-package</artifactId>
+			<version>2018.9.2</version>
+			<type>jar</type>
+			<exclusions>
+				<exclusion>
+					<groupId>nz.ac.waikato.cms.weka</groupId>
+					<artifactId>weka-dev</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

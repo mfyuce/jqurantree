@@ -68,14 +68,8 @@ public class LineCountTest {
 	@Test
 //	@Ignore
 	public void extractRootsAndLetters() throws Exception {
-		Set<String> letters = getAllDistinctLetters();
-		Map<Character, Integer> lettersAndNumbers = new LinkedHashMap<>();
-		int currentNumber=1;
-		for (String l:letters) {
-			if(StringUtils.isNotBlank(l)) {
-				lettersAndNumbers.put(l.charAt(0), currentNumber++);
-			}
-		}
+		Map<Character, Integer> lettersAndNumbers = getCharacterIntegerMap();
+		csvWriter("letter_and_numbers.csv",lettersAndNumbers);
 		Map<String, String> wordsAndRoots= getAllDistinctWordsAndRoots(StemmerType.ISRI);
 		List<String[]> ret = new ArrayList<>();
 		String[] n = new String[MAX_COL];
@@ -106,6 +100,19 @@ public class LineCountTest {
 		}
 		csvWriter("roots_and_letters.csv",ret);
 	}
+
+	private Map<Character, Integer> getCharacterIntegerMap() throws IOException {
+		Set<String> letters = getAllDistinctLetters();
+		Map<Character, Integer> lettersAndNumbers = new LinkedHashMap<>();
+		int currentNumber=1;
+		for (String l:letters) {
+			if(StringUtils.isNotBlank(l)) {
+				lettersAndNumbers.put(l.charAt(0), currentNumber++);
+			}
+		}
+		return lettersAndNumbers;
+	}
+
 	@Test
 	@Ignore
 	public void extractWords() throws IOException {
