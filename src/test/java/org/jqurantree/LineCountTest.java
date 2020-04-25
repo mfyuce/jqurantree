@@ -28,6 +28,7 @@ import org.apache.maven.shared.utils.io.FileUtils;
 //import org.jqurantree.analysis.stemmer.ISRI;
 import org.jqurantree.analysis.stemmer.StemmerType;
 import org.jqurantree.arabic.ArabicCharacter;
+import org.jqurantree.arabic.ArabicText;
 import org.jqurantree.core.error.JQuranTreeException;
 import org.jqurantree.orthography.Document;
 import org.jqurantree.orthography.Token;
@@ -43,34 +44,34 @@ public class LineCountTest {
 	@Test
 	@Ignore
 	public void extractRootsAndWordsAlKhalil1_1() throws Exception {
-		csvWriter("stemming/roots_alkhalil1.1_auto.csv",getAllDistinctWordsAndRoots(StemmerType.AlKhalil1_1), false);
+		csvWriter("stemming/roots_alkhalil1.1_auto.csv",getAllDistinctWordsAndRoots(StemmerType.AlKhalil1_1,true), false);
 	}
 	@Test
 	@Ignore
 	public void extractRootsAndWordsISRI() throws Exception {
-		csvWriter("stemming/roots_isri_auto.csv",getAllDistinctWordsAndRoots(StemmerType.ISRI), false);
+		csvWriter("stemming/roots_isri_auto.csv",getAllDistinctWordsAndRoots(StemmerType.ISRI,true), false);
 	}
 	@Test
 	@Ignore
 	public void extractRootsAndWordsKhodja() throws Exception {
-		csvWriter("stemming/roots_khodja_auto.csv",getAllDistinctWordsAndRoots(StemmerType.KODJA), false);
+		csvWriter("stemming/roots_khodja_auto.csv",getAllDistinctWordsAndRoots(StemmerType.KODJA,true), false);
 	}
 	@Test
 	@Ignore
 	public void extractRootsAndWordsLucene() throws Exception {
-		csvWriter("stemming/roots_lucene_auto.csv",getAllDistinctWordsAndRoots(StemmerType.Lucene), false);
+		csvWriter("stemming/roots_lucene_auto.csv",getAllDistinctWordsAndRoots(StemmerType.Lucene,true), false);
 	}
 	@Test
 	@Ignore
 	public void extractRootsAndWordsQuranicCorpus() throws Exception {
-		csvWriter("stemming/roots_quraniccorpus_auto.csv",getAllDistinctWordsAndRoots(StemmerType.QuranicCorpus), false);
+		csvWriter("stemming/roots_quraniccorpus_auto.csv",getAllDistinctWordsAndRoots(StemmerType.QuranicCorpus,true), false);
 	}
 	@Test
-//	@Ignore
+	@Ignore
 	public void extractRootsAndLetters() throws Exception {
-		Map<Character, Integer> lettersAndNumbers = getCharacterIntegerMap();
-		csvWriter("letter_and_numbers.csv",lettersAndNumbers);
-		Map<String, String> wordsAndRoots= getAllDistinctWordsAndRoots(StemmerType.ISRI);
+		Map<String, Integer> lettersAndNumbers = getCharacterIntegerMap();
+		csvWriter("letter_and_numbers.csv", Collections.unmodifiableMap(lettersAndNumbers));
+		Map<ArabicText, String> wordsAndRoots= getAllDistinctWordsAndRoots(StemmerType.QuranicCorpus,false);
 		List<String[]> ret = new ArrayList<>();
 		String[] n = new String[MAX_COL];
 		for (int i=0;i<MAX_COL-3;i++){
@@ -80,34 +81,35 @@ public class LineCountTest {
 		n[MAX_COL-2] = "r2";
 		n[MAX_COL-1] = "r3";
 		ret.add(n);
-		for (Map.Entry<String, String> v: wordsAndRoots.entrySet()) {
+		for (Map.Entry<ArabicText, String> v: wordsAndRoots.entrySet()) {
 			n = new String[MAX_COL];
-			String key = v.getKey();
+			String key = v.getKey().removeDiacritics().removeNonLetters().toUnicode();
 			String value = v.getValue();
 			if(value.length()>2) {
 				for (int iW = 0; iW < MAX_COL - 3 ; iW++) {
 					if(iW < key.length()) {
-						n[iW] = String.valueOf(lettersAndNumbers.get(key.charAt(iW)));
+						n[iW] = String.valueOf(lettersAndNumbers.get(String.valueOf(key.charAt(iW))));
 					}else{
 						n[iW] = "0";
 					}
 				}
-				n[MAX_COL - 3] = "h"+ String.valueOf(lettersAndNumbers.get(value.charAt(0)));
-				n[MAX_COL - 2] = "h"+String.valueOf(lettersAndNumbers.get(value.charAt(1)));
-				n[MAX_COL - 1] = "h"+String.valueOf(lettersAndNumbers.get(value.charAt(2)));
+				ArabicText t = ArabicText.fromUnicode(value);
+				n[MAX_COL - 3] = "h"+ lettersAndNumbers.get(t.getCharacter(0).toUnicode());
+				n[MAX_COL - 2] = "h"+ lettersAndNumbers.get(t.getCharacter(1).toUnicode());
+				n[MAX_COL - 1] = "h"+ lettersAndNumbers.get(t.getCharacter(2).toUnicode());
 				ret.add(n);
 			}
 		}
 		csvWriter("roots_and_letters.csv",ret);
 	}
 
-	private Map<Character, Integer> getCharacterIntegerMap() throws IOException {
-		Set<String> letters = getAllDistinctLetters();
-		Map<Character, Integer> lettersAndNumbers = new LinkedHashMap<>();
+	private Map<String, Integer> getCharacterIntegerMap() throws IOException {
+		Set<String> letters = getAllDistinctLetters(true);
+		Map<String, Integer> lettersAndNumbers = new LinkedHashMap<>();
 		int currentNumber=1;
 		for (String l:letters) {
 			if(StringUtils.isNotBlank(l)) {
-				lettersAndNumbers.put(l.charAt(0), currentNumber++);
+				lettersAndNumbers.put(l, currentNumber++);
 			}
 		}
 		return lettersAndNumbers;
@@ -116,19 +118,18 @@ public class LineCountTest {
 	@Test
 	@Ignore
 	public void extractWords() throws IOException {
-		Map<String, String> wordsAndRoots= new LinkedHashMap<String, String>();
+		Map<ArabicText, String> wordsAndRoots= new LinkedHashMap<ArabicText, String>();
 		for (Token v: Document.getTokens()) {
-			String key = v.removeDiacritics().removeNonLetters().toUnicode();
-			if(!wordsAndRoots.containsKey(key)) {
-				wordsAndRoots.put(key, key);
+			if(!wordsAndRoots.containsKey(v)) {
+				wordsAndRoots.put(v, v.removeDiacritics().toUnicode());
 			}
 		}
 		csvWriter("words.csv",wordsAndRoots, true);
 	}
 	@Test
-//	@Ignore
+	@Ignore
 	public void extractLetters() throws IOException {
-		csvWriter("letters.csv",getAllDistinctLetters());
+		csvWriter("letters.csv",getAllDistinctLetters(true));
 	}
 	@Test
 	@Ignore

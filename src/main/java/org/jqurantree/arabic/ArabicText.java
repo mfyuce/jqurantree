@@ -18,7 +18,9 @@
 
 package org.jqurantree.arabic;
 
+import java.util.Arrays;
 import java.util.Iterator;
+import java.util.Objects;
 
 import org.jqurantree.arabic.encoding.ArabicEncoder;
 import org.jqurantree.arabic.encoding.EncodingFactory;
@@ -351,7 +353,7 @@ public class ArabicText implements Iterable<ArabicCharacter> {
 		for (int i = 0; i < characterCount; i++) {
 
 			// Letter?
-			if (ByteFormat.isLetter(buffer, offset)) {
+			if (offset<this.buffer.length && ByteFormat.isLetter(buffer, offset)) {
 				count++;
 			}
 
@@ -391,7 +393,7 @@ public class ArabicText implements Iterable<ArabicCharacter> {
 			for (int i = 0; i < characterCount; i++) {
 
 				// Letter?
-				if (ByteFormat.isLetter(this.buffer, offset2)) {
+				if (offset2<this.buffer.length && ByteFormat.isLetter(this.buffer, offset2)) {
 					buffer[offset1] = this.buffer[offset2];
 					offset1 += ByteFormat.CHARACTER_WIDTH;
 				}
@@ -406,5 +408,18 @@ public class ArabicText implements Iterable<ArabicCharacter> {
 
 		// Return text.
 		return text;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		ArabicText that = (ArabicText) o;
+		return that.toUnicode().trim().equals(this.toUnicode().trim());
+	}
+
+	@Override
+	public int hashCode() {
+		return this.toUnicode().trim().hashCode();
 	}
 }

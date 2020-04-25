@@ -38,6 +38,7 @@ public class QuranicCorpusStemmer {
                 String[] items = line.split("\t",-1);
                 CorpusItem parsed = parse(items);
                 Location currentLocation = parsed.getLocation();
+
                 if(lastLocation !=null && !lastLocation.equals(currentLocation)){
                     // unrootable word
                     addNewRoot(inBetween, ArabicText.fromUnicode(inBetween).toBuckwalter());
@@ -49,12 +50,11 @@ public class QuranicCorpusStemmer {
                 Token token = Document.getToken(currentLocation);
                 Map<String, String> features = parsed.getFeatures();
                 boolean canCheckForRoot = true;
-                String text = ArabicText.fromBuckwalter(parsed.getText()).
-                        removeDiacritics().removeNonLetters().toUnicode();
+                String text = ArabicText.fromBuckwalter(parsed.getText()).toUnicode();
                 boolean lastRootExists = StringUtils.isNotBlank(lastRoot);
                 if (features.containsKey(ROOT) || lastRootExists) {
                     String root = lastRootExists ? lastRoot : features.get(ROOT);
-                    String currentToken = token.removeDiacritics().removeNonLetters().toUnicode();
+                    String currentToken = token.toUnicode();
                     if (!text.equals(currentToken)) {
                         if (StringUtils.isNotBlank(inBetween)) {
                             inBetween = inBetween + text;
@@ -97,10 +97,14 @@ public class QuranicCorpusStemmer {
         }
     }
 
-    public static String stem(String text){
-        if(roots.containsKey(text)){
-            return roots.get(text);
+    public static String stem(ArabicText text){
+        String u = text.toUnicode();
+        if(text.toUnicode().equals("ماكول")){
+            System.out.println();
         }
-        return text;
+        if(roots.containsKey(u)){
+            return roots.get(u);
+        }
+        return u;
     }
 }

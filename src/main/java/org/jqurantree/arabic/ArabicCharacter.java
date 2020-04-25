@@ -21,6 +21,9 @@ package org.jqurantree.arabic;
 import org.jqurantree.arabic.encoding.EncodingFactory;
 import org.jqurantree.arabic.encoding.EncodingType;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 /**
  * An <code>ArabicCharacter</code> is a single letter or Quranic symbol within
  * {@link org.jqurantree.arabic.ArabicText}, including any attached diacritics.
@@ -271,5 +274,18 @@ public class ArabicCharacter {
 	 */
 	public String toSimpleEncoding() {
 		return toString(EncodingType.Simple);
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		ArabicCharacter that = (ArabicCharacter) o;
+		return that.toUnicode().trim().equals(this.toUnicode().trim());
+	}
+
+	@Override
+	public int hashCode() {
+		return this.toUnicode().trim().hashCode();
 	}
 }

@@ -173,7 +173,7 @@ public class Tools {
     /**
      * @throws IOException
      */
-    public static void csvWriter(String fileName, Map<String, String> map, boolean onlyKeys) throws IOException {
+    public static void csvWriter(String fileName, Map<ArabicText, String> map, boolean onlyKeys) throws IOException {
         File file = new File(fileName);
         if(file.exists()) {
             FileUtils.delete(file);
@@ -184,7 +184,7 @@ public class Tools {
         if(!onlyKeys){
             writer.write("word,root" + System.lineSeparator());
         }
-        for (Map.Entry<String, String> kv:map.entrySet()) {
+        for (Map.Entry<ArabicText, String> kv:map.entrySet()) {
             if(onlyKeys) {
                 writer.write(kv.getKey() + System.lineSeparator());
             }else{
@@ -215,13 +215,13 @@ public class Tools {
         }
         writer.flush();
     }
-    public static void csvWriter(String fileName, Map<Character, Integer> map) throws IOException {
+    public static void csvWriter(String fileName, Map<Object, Integer> map) throws IOException {
         File file = new File(fileName);
         if(file.exists()) {
             FileUtils.delete(file);
         }
         OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8);
-        for (Map.Entry<Character, Integer> kv:map.entrySet()) {
+        for (Map.Entry<Object, Integer> kv:map.entrySet()) {
             writer.write(kv.getKey() + "," + kv.getValue() + System.lineSeparator());
         }
         writer.flush();
@@ -241,13 +241,19 @@ public class Tools {
         FileUtils.fileWrite(file,"UTF8", value);
     }
 
-    public static Set<String> getAllDistinctLetters() throws IOException {
+    public static Set<String> getAllDistinctLetters(boolean withHaraka) throws IOException {
         Map<String, String> wordsAndRoots= new LinkedHashMap<String, String>();
         for (Token w: Document.getTokens()) {
-            for (ArabicCharacter l: w.removeDiacritics().removeNonLetters()) {
+            for (ArabicCharacter l: withHaraka? w : w.removeDiacritics().removeNonLetters()) {
                 String key = l.toUnicode();
                 if (!wordsAndRoots.containsKey(key)) {
                     wordsAndRoots.put(key, key);
+                }
+                if(withHaraka) {
+                    key = ArabicText.fromUnicode(l.toUnicode()).removeDiacritics().removeNonLetters().toUnicode();
+                    if (StringUtils.isNotBlank(key) && !wordsAndRoots.containsKey(key)) {
+                        wordsAndRoots.put(key, key);
+                    }
                 }
             }
         }
@@ -269,12 +275,13 @@ public class Tools {
 
         return wordsAndRoots;
     }
-    public static Map<String, String> getAllDistinctWordsAndRoots(StemmerType stemmerType) throws Exception {
-        Map<String, String> wordsAndRoots = new LinkedHashMap<String, String>();
+    public static Map<ArabicText, String> getAllDistinctWordsAndRoots(StemmerType stemmerType, boolean addNoHaraka) throws Exception {
+        Map<ArabicText, String> wordsAndRoots = new LinkedHashMap<ArabicText, String>();
         for (Token w : Document.getTokens()) {
-            String key = w.removeDiacritics().removeNonLetters().toUnicode();
+            ArabicText key = w;
             if (!wordsAndRoots.containsKey(key)) {
-                wordsAndRoots.put(key, StemmingManager.stem(stemmerType, key));
+                String noHaraka = w.removeDiacritics().removeNonLetters().toUnicode();// remove order is important
+                wordsAndRoots.put(key, StemmingManager.stem(stemmerType, key) + (addNoHaraka? "," + noHaraka:""));
             }
         }
 
