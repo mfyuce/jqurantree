@@ -5,8 +5,6 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.lucene.analysis.ar.ArabicStemmer;
 import org.apache.maven.shared.utils.io.FileUtils;
 import org.jqurantree.analysis.AnalysisTable;
-import org.jqurantree.analysis.stemmer.AlkhalilStemmer;
-import org.jqurantree.analysis.stemmer.ISRI;
 import org.jqurantree.analysis.stemmer.StemmerType;
 import org.jqurantree.analysis.stemmer.StemmingManager;
 import org.jqurantree.arabic.ArabicCharacter;
@@ -204,6 +202,17 @@ public class Tools {
         }
         writer.flush();
     }
+    public static void csvWriter(String fileName, String[] map) throws IOException {
+        File file = new File(fileName);
+        if(file.exists()) {
+            FileUtils.delete(file);
+        }
+        OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8);
+        for (String kv:map) {
+            writer.write(kv + System.lineSeparator());
+        }
+        writer.flush();
+    }
     public static void csvWriter(String fileName, List<String[]> map) throws IOException {
         File file = new File(fileName);
         if(file.exists()) {
@@ -241,7 +250,7 @@ public class Tools {
         FileUtils.fileWrite(file,"UTF8", value);
     }
 
-    public static Set<String> getAllDistinctLetters(boolean withHaraka) throws IOException {
+    public static String[] getAllDistinctLetters(boolean withHaraka) throws IOException {
         Map<String, String> wordsAndRoots= new LinkedHashMap<String, String>();
         for (Token w: Document.getTokens()) {
             for (ArabicCharacter l: withHaraka? w : w.removeDiacritics().removeNonLetters()) {
@@ -257,8 +266,9 @@ public class Tools {
                 }
             }
         }
-
-        return wordsAndRoots.keySet();
+        String[] arr = new String[wordsAndRoots.size()];
+         wordsAndRoots.keySet().toArray(arr);
+        return arr;
     }
     public static Map<String, String> getAllDistinctWordsAndRootsLLuceneStemmer() throws IOException {
         Map<String, String> wordsAndRoots = new LinkedHashMap<String, String>();
@@ -275,13 +285,19 @@ public class Tools {
 
         return wordsAndRoots;
     }
-    public static Map<ArabicText, String> getAllDistinctWordsAndRoots(StemmerType stemmerType, boolean addNoHaraka) throws Exception {
+    public static Map<ArabicText, String> getAllDistinctWordsAndRoots(StemmerType stemmerType, boolean addNoHaraka, boolean removeDiacritics) throws Exception {
         Map<ArabicText, String> wordsAndRoots = new LinkedHashMap<ArabicText, String>();
         for (Token w : Document.getTokens()) {
             ArabicText key = w;
             if (!wordsAndRoots.containsKey(key)) {
                 String noHaraka = w.removeDiacritics().removeNonLetters().toUnicode();// remove order is important
-                wordsAndRoots.put(key, StemmingManager.stem(stemmerType, key) + (addNoHaraka? "," + noHaraka:""));
+                String value = null;
+                if(removeDiacritics) {
+                    value= StemmingManager.stem(stemmerType, key.removeDiacritics().removeNonLetters());
+                }else{
+                    value= StemmingManager.stem(stemmerType, key);
+                }
+                wordsAndRoots.put(key, value + (addNoHaraka ? "," + noHaraka : ""));
             }
         }
 

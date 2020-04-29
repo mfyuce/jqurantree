@@ -44,34 +44,54 @@ public class LineCountTest {
 	@Test
 	@Ignore
 	public void extractRootsAndWordsAlKhalil1_1() throws Exception {
-		csvWriter("stemming/roots_alkhalil1.1_auto.csv",getAllDistinctWordsAndRoots(StemmerType.AlKhalil1_1,true), false);
+		csvWriter("stemming/roots_alkhalil1.1_auto.csv",getAllDistinctWordsAndRoots(StemmerType.AlKhalil1_1,true, false), false);
+	}
+	@Test
+	@Ignore
+	public void extractRootsAndWordsNoDiacriticsAlKhalil1_1() throws Exception {
+		csvWriter("stemming/roots_alkhalil1.1_no_haraka_auto.csv",getAllDistinctWordsAndRoots(StemmerType.AlKhalil1_1,true, true), false);
 	}
 	@Test
 	@Ignore
 	public void extractRootsAndWordsISRI() throws Exception {
-		csvWriter("stemming/roots_isri_auto.csv",getAllDistinctWordsAndRoots(StemmerType.ISRI,true), false);
+		csvWriter("stemming/roots_isri_auto.csv",getAllDistinctWordsAndRoots(StemmerType.ISRI,true, false), false);
+	}
+	@Test
+	@Ignore
+	public void extractRootsAndWordsNoDiacriticsISRI() throws Exception {
+		csvWriter("stemming/roots_isri_no_haraka_auto.csv",getAllDistinctWordsAndRoots(StemmerType.ISRI,true,  true), false);
 	}
 	@Test
 	@Ignore
 	public void extractRootsAndWordsKhodja() throws Exception {
-		csvWriter("stemming/roots_khodja_auto.csv",getAllDistinctWordsAndRoots(StemmerType.KODJA,true), false);
+		csvWriter("stemming/roots_khodja_auto.csv",getAllDistinctWordsAndRoots(StemmerType.KODJA,true, false), false);
+	}
+	@Test
+	@Ignore
+	public void extractRootsAndWordsNoDiacriticsKhodja() throws Exception {
+		csvWriter("stemming/roots_khodja_no_haraka_auto.csv",getAllDistinctWordsAndRoots(StemmerType.KODJA,true, true), false);
 	}
 	@Test
 	@Ignore
 	public void extractRootsAndWordsLucene() throws Exception {
-		csvWriter("stemming/roots_lucene_auto.csv",getAllDistinctWordsAndRoots(StemmerType.Lucene,true), false);
+		csvWriter("stemming/roots_lucene_auto.csv",getAllDistinctWordsAndRoots(StemmerType.Lucene,true, false), false);
+	}
+	@Test
+	@Ignore
+	public void extractRootsAndWordsNoDiacriticsLucene() throws Exception {
+		csvWriter("stemming/roots_lucene_no_haraka_auto.csv",getAllDistinctWordsAndRoots(StemmerType.Lucene,true,true), false);
 	}
 	@Test
 	@Ignore
 	public void extractRootsAndWordsQuranicCorpus() throws Exception {
-		csvWriter("stemming/roots_quraniccorpus_auto.csv",getAllDistinctWordsAndRoots(StemmerType.QuranicCorpus,true), false);
+		csvWriter("stemming/roots_quraniccorpus_auto.csv",getAllDistinctWordsAndRoots(StemmerType.QuranicCorpus,true,false), false);
 	}
 	@Test
 	@Ignore
 	public void extractRootsAndLetters() throws Exception {
 		Map<String, Integer> lettersAndNumbers = getCharacterIntegerMap();
 		csvWriter("letter_and_numbers.csv", Collections.unmodifiableMap(lettersAndNumbers));
-		Map<ArabicText, String> wordsAndRoots= getAllDistinctWordsAndRoots(StemmerType.QuranicCorpus,false);
+		Map<ArabicText, String> wordsAndRoots= getAllDistinctWordsAndRoots(StemmerType.QuranicCorpus,false,false);
 		List<String[]> ret = new ArrayList<>();
 		String[] n = new String[MAX_COL];
 		for (int i=0;i<MAX_COL-3;i++){
@@ -104,7 +124,7 @@ public class LineCountTest {
 	}
 
 	private Map<String, Integer> getCharacterIntegerMap() throws IOException {
-		Set<String> letters = getAllDistinctLetters(true);
+		String[] letters = getAllDistinctLetters(true);
 		Map<String, Integer> lettersAndNumbers = new LinkedHashMap<>();
 		int currentNumber=1;
 		for (String l:letters) {
