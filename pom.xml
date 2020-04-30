@@ -9,8 +9,9 @@
 	<packaging>jar</packaging>
 	<description>JQuranTree</description>
 	<properties>
-	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<gitlab.project.id>18062928</gitlab.project.id>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -146,7 +147,21 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
+		<repository>
+			<id>gitlab-maven</id>
+			<url>https://gitlab.com/api/v4/projects/${gitlab.project.id}/packages/maven</url>
+		</repository>
 	</repositories>
+	<distributionManagement>
+		<repository>
+			<id>gitlab-maven</id>
+			<url>https://gitlab.com/api/v4/projects/${gitlab.project.id}/packages/maven</url>
+		</repository>
+		<snapshotRepository>
+			<id>gitlab-maven</id>
+			<url>https://gitlab.com/api/v4/projects/${gitlab.project.id}/packages/maven</url>
+		</snapshotRepository>
+	</distributionManagement>
 	<reporting>
 		<plugins>
 			<plugin>
