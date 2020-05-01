@@ -45,9 +45,14 @@ public enum StemmerType {
     Lucene,
 
     /**
-     * Lucene.
+     * AlKhalil1.1.
      */
     AlKhalil1_1,
+
+    /**
+     * AlKhalil2.1.
+     */
+    AlKhalil2_1,
 
     /**
      * Lucene.

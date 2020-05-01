@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.jqurantree.analysis.AnalysisTable;
-import org.jqurantree.analysis.stemmer.AlkhalilStemmer;
 import org.jqurantree.analysis.stemmer.StemmerType;
 import org.jqurantree.analysis.stemmer.StemmingManager;
 import org.jqurantree.arabic.ArabicText;

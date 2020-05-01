@@ -52,6 +52,16 @@ public class LineCountTest {
 		csvWriter("stemming/roots_alkhalil1.1_no_haraka_auto.csv",getAllDistinctWordsAndRoots(StemmerType.AlKhalil1_1,true, true), false);
 	}
 	@Test
+//	@Ignore
+	public void extractRootsAndWordsAlKhalil2_1() throws Exception {
+		csvWriter("stemming/roots_alkhalil2.1_auto.csv",getAllDistinctWordsAndRoots(StemmerType.AlKhalil1_1,true, false), false);
+	}
+	@Test
+	@Ignore
+	public void extractRootsAndWordsNoDiacriticsAlKhalil2_1() throws Exception {
+		csvWriter("stemming/roots_alkhalil2.1_no_haraka_auto.csv",getAllDistinctWordsAndRoots(StemmerType.AlKhalil1_1,true, true), false);
+	}
+	@Test
 	@Ignore
 	public void extractRootsAndWordsISRI() throws Exception {
 		csvWriter("stemming/roots_isri_auto.csv",getAllDistinctWordsAndRoots(StemmerType.ISRI,true, false), false);

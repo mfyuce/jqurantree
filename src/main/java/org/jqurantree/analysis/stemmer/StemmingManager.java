@@ -58,6 +58,8 @@ public class StemmingManager {
                     return new String(toStem);
                 case AlKhalil1_1:
                     return AlkhalilStemmer.stem(text.toUnicode());
+                case AlKhalil2_1:
+                    return Alkhalil2Stemmer.stem(text.toUnicode());
                 case KODJA:
                     return khodjaStemmer.stemWord(text.toUnicode());
                 case QuranicCorpus:
